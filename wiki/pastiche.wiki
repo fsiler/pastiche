@@ -1,14 +1,14 @@
-#summary One-sentence summary of this page.
+#summary Ideas for using pastiche, examples at [http://pastiche.info pastiche.info].
 
-= Introduction =
+= Ideas =
 
-Add your content here.
+ * interactive painting
+ * p2p or server-based
+ * areas (e.g. shopping, travel, production) and resources, supply/demand
+ * urban planning, liquid architecture
+ * *game*, compete, grow
+ * dada info *search*/browse
+ * traces
+ * photo/music collection
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-
+[http://pastiche.info pastiche.info]
