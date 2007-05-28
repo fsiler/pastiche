@@ -2,14 +2,22 @@
 
 = Ideas =
 
- * interactive painting
+ * interactive painting, tablet
  * p2p or server-based
  * areas (e.g. shopping, travel, production) and resources, supply/demand
+ * force fields
  * urban planning, liquid architecture
  * *game*, compete, grow, local views on the world
  * metadada info *search*/browse
- * traces, curiosity
+ * traces, curiosity, snails
  * history, context
  * photo/music collection
+ * box world, 3 dof
+ * Mediashelf
+ * Catan
 
 [http://pastiche.info pastiche.info]
+
+= Implementation =
+
+ * Agency(Agent): control groups of agents, forward messages
