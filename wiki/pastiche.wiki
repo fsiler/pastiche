@@ -1,6 +1,6 @@
 #summary Ideas for using pastiche, examples at pastiche.info.
 
-= Ideas =
+= ideas =
 
  * interactive painting, tablet
  * p2p or server-based
@@ -15,9 +15,40 @@
  * box world, 3 dof
  * Mediashelf
  * Catan
+ * dada
+ * vian
+ * gainsbourg
+ * derrida: deconstruction, différance
+ * mas, fipa, jade, searle (speech acts), dennett (intentional stance)
+ * duchamp, ready-mades
+ * jazz, improvisation
+ * geo-info, context, sensors/actuators/effectors
+ * reasoning, 3apl, prolog
+ * visual programming
+ * w3c, semweb, rdf, owl
+ * kafka
+ * collaboration, competition
+ * p2p
+ * libraries: rdflib, pyparsing, karrigell
+ * doppler, interference
+ * oss, patents
+ * soa, ajax
+ * liquid architecture
+ * motion: 6dof motion, rotation, size, shape, sound, colour
+ * info navigation, organisation
+ * mind mapper, semantic idea network
+
+= introduction =
+
+= mechanisms =
+
+= "applications" =
+
+= sources =
+
 
 [http://pastiche.info pastiche.info]
 
-= Implementation =
+= implementation =
 
  * Agency(Agent): control groups of agents, forward messages
