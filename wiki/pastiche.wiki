@@ -26,17 +26,18 @@
  * reasoning, 3apl, prolog
  * visual programming
  * w3c, semweb, rdf, owl
- * kafka
+ * kafka: schloss
  * collaboration, competition
  * p2p
  * libraries: rdflib, pyparsing, karrigell
- * doppler, interference
+ * interference, doppler sound field
  * oss, patents
  * soa, ajax
- * liquid architecture
+ * puzzle
  * motion: 6dof motion, rotation, size, shape, sound, colour
  * info navigation, organisation
  * mind mapper, semantic idea network
+ * chess: simultaneous play, strategy builder, collaborative planning
 
 = introduction =
 
@@ -46,8 +47,9 @@
 
 = sources =
 
+= examples =
 
-[http://pastiche.info pastiche.info]
+tbd. [http://pastiche.info pastiche.info]
 
 = implementation =
 
