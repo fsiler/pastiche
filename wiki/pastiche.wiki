@@ -1,4 +1,4 @@
-#summary Ideas for using pastiche, examples at pastiche.info.
+#summary ideas for using pastiche
 
 = ideas =
 
@@ -29,17 +29,16 @@
  * visual programming
  * w3c, semweb, rdf, owl
  * kafka: schloss
- * collaboration, competition
- * p2p
+ * Axelrod: collaboration, competition, PIPD
  * libraries: rdflib, pyparsing, karrigell
- * interference, doppler sound field
+ * interference, doppler sound fields
  * oss, patents
  * soa, ajax
  * puzzle
  * motion: 6dof motion, rotation, size, shape, sound, colour
  * info navigation, organisation
  * mind mapper, semantic idea network
- * chess: simultaneous play, strategy builder, collaborative planning
+ * chess: simultaneous game, strategy builder, collaborative planning
 
 = introduction =
 
