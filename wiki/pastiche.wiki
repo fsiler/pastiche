@@ -41,6 +41,7 @@
  * chess: simultaneous game, strategy builder, collaborative planning
  * structure vs. event (Lévi-Strauss)
  * work (of art), program code vs. process, interaction
+ * state/behaviour
 
 = introduction =
 
