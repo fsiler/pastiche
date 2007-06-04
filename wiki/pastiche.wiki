@@ -3,13 +3,13 @@
 = ideas =
 
  * interactive painting, tablet
- * p2p or server-based
+ * p2p vs. server-based
  * areas (e.g. shopping, travel, production) and resources, supply/demand
  * force fields
  * urban planning, liquid architecture
  * *game*, compete, grow, local views on the world
  * metadada info *search*/browse
- * traces, curiosity, snails
+ * traces, curiosity, snails, trails
  * history, context
  * photo/music collection
  * box world, 3 dof
@@ -18,6 +18,8 @@
  * dada
  * vian
  * gainsbourg
+ * moholy-nagy
+ * lissitzky
  * derrida: deconstruction, différance
  * mas, fipa, jade, searle (speech acts), dennett (intentional stance)
  * duchamp, ready-mades
