@@ -28,7 +28,7 @@
  * reasoning, 3apl, prolog
  * visual programming
  * w3c, semweb, rdf, owl
- * kafka: schloss
+ * Kafka: Schloss, Strafkolonie
  * Axelrod: collaboration, competition, PIPD
  * libraries: rdflib, pyparsing, karrigell
  * interference, doppler sound fields
@@ -42,6 +42,17 @@
  * structure vs. event (Lévi-Strauss)
  * work (of art), program code vs. process, interaction
  * state/behaviour
+ * Xenakis
+ * Le Corbusier: promenade architecturale, musée à croissance illimitée
+ * Gehry
+ * Hadid
+   * [http://www.arcspace.com/architects/hadid/kartal_pendik/kp.html]
+   * [http://www.arcspace.com/architects/hadid/cagliari/cagliari.html]
+ * Coop Himmelb(l)au
+ * Superstudio
+ * Szeemann: Junggesellenmaschinen
+ * Tinguely
+ * ...
 
 = introduction =
 
