@@ -40,7 +40,7 @@
  * mind mapper, semantic idea network
  * chess: simultaneous game, strategy builder, collaborative planning
  * structure vs. event (Lévi-Strauss)
- * work (of art) vs. process, interaction
+ * work (of art), program code vs. process, interaction
 
 = introduction =
 
