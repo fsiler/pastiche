@@ -39,6 +39,8 @@
  * info navigation, organisation
  * mind mapper, semantic idea network
  * chess: simultaneous game, strategy builder, collaborative planning
+ * structure vs. event (Lévi-Strauss)
+ * work (of art) vs. process, interaction
 
 = introduction =
 
