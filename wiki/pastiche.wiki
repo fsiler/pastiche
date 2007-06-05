@@ -1,5 +1,11 @@
 #summary ideas for using pastiche
 
+http://pyparsing.wikispaces.com/i/plant.gif
+
+[plant plant.gif]
+
+[plant.gif plant]
+
 = ideas =
 
  * interactive painting, tablet
@@ -15,7 +21,7 @@
  * box world, 3 dof
  * Mediashelf
  * Catan
- * dada
+ * dada, arp
  * vian
  * gainsbourg
  * moholy-nagy
@@ -69,3 +75,7 @@ tbd. [http://pastiche.info pastiche.info]
 = implementation =
 
  * Agency(Agent): control groups of agents, forward messages
+
+
+
+
