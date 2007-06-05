@@ -1,5 +1,7 @@
 #summary ideas for using pastiche
 
+http://pastiche.googlecode.com/files/python-logo.gif
+
 = ideas =
 
  * interactive painting, tablet
@@ -69,6 +71,7 @@ tbd. [http://pastiche.info pastiche.info]
 = implementation =
 
  * Agency(Agent): control groups of agents, forward messages
+
 
 
 
