@@ -1,4 +1,4 @@
-#summary ideas for using pastiche
+#summary a hodge-podge of ideas
 
 http://pastiche.googlecode.com/files/python-logo.gif
 
@@ -62,19 +62,24 @@ http://pastiche.googlecode.com/files/python-logo.gif
 
 = introduction =
 
+= scenarios =
+
 = mechanisms =
 
-= "applications" =
+= sources of inspiration =
 
-= sources =
+ * technology
+ * architecture
+ * philosophy
+ * arts
+   * literature
+   * music
+ * sociology
 
-= examples =
+= demos =
 
 tbd. [http://pastiche.info pastiche.info]
 
 = implementation =
 
  * Agency(Agent): control groups of agents, forward messages
-
-
-
