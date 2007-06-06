@@ -37,6 +37,8 @@ http://pastiche.googlecode.com/files/python-logo.gif
  * oss, patents
  * soa, ajax
  * puzzle
+ * collage
+ * Schwitters, Merz-Bau
  * motion: 6dof motion, rotation, size, shape, sound, colour
  * info navigation, organisation
  * mind mapper, semantic idea network
@@ -45,7 +47,7 @@ http://pastiche.googlecode.com/files/python-logo.gif
  * work (of art), program code vs. process, interaction
  * state/behaviour
  * Xenakis
- * Le Corbusier: promenade architecturale, musée à croissance illimitée
+ * Le Corbusier: poème électronique, promenade architecturale, musée à croissance illimitée
  * Gehry
  * Hadid
    * [http://www.arcspace.com/architects/hadid/kartal_pendik/kp.html]
@@ -54,6 +56,8 @@ http://pastiche.googlecode.com/files/python-logo.gif
  * Superstudio
  * Szeemann: Junggesellenmaschinen
  * Tinguely
+ * mobile architecture, mobile agents
+ * mobility, ad-hoc networks
  * ...
 
 = introduction =
@@ -71,7 +75,6 @@ tbd. [http://pastiche.info pastiche.info]
 = implementation =
 
  * Agency(Agent): control groups of agents, forward messages
-
 
 
 
