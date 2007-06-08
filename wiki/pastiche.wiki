@@ -2,69 +2,47 @@
 
 http://pastiche.googlecode.com/files/python-logo.gif
 
-= ideas =
-
- * interactive painting, tablet
- * p2p vs. server-based
- * areas (e.g. shopping, travel, production) and resources, supply/demand
- * force fields
- * urban planning, liquid architecture
- * *game*, compete, grow, local views on the world
- * metadada info *search*/browse
- * traces, curiosity, snails, trails
- * history, context
- * photo/music collection
- * box world, 3 dof
- * Mediashelf
- * Catan
- * dada, arp
- * vian
- * gainsbourg
- * moholy-nagy
- * lissitzky
- * derrida: deconstruction, différance
- * mas, fipa, jade, searle (speech acts), dennett (intentional stance)
- * duchamp, ready-mades
- * jazz, improvisation
- * geo-info, context, sensors/actuators/effectors
- * reasoning, 3apl, prolog
- * visual programming
- * w3c, semweb, rdf, owl
- * Kafka: Schloss, Strafkolonie
- * Axelrod: collaboration, competition, PIPD
- * libraries: rdflib, pyparsing, karrigell
- * interference, doppler sound fields
- * oss, patents
- * soa, ajax
- * puzzle
- * collage
- * Schwitters, Merz-Bau
- * motion: 6dof motion, rotation, size, shape, sound, colour
- * info navigation, organisation
- * mind mapper, semantic idea network
- * chess: simultaneous game, strategy builder, collaborative planning
- * structure vs. event (Lévi-Strauss)
- * work (of art), program code vs. process, interaction
- * state/behaviour
- * Xenakis
- * Le Corbusier: poème électronique, promenade architecturale, musée à croissance illimitée
- * Gehry
- * Hadid
-   * [http://www.arcspace.com/architects/hadid/kartal_pendik/kp.html]
-   * [http://www.arcspace.com/architects/hadid/cagliari/cagliari.html]
- * Coop Himmelb(l)au
- * Superstudio
- * Szeemann: Junggesellenmaschinen
- * Tinguely
- * mobile architecture, mobile agents
- * mobility, ad-hoc networks
- * ...
-
 = introduction =
 
 = scenarios =
 
+ * info navigation, organisation
+ * mind mapper, semantic idea network
+ * chess: simultaneous game, strategy builder, collaborative planning
+ * puzzle
+ * collage
+ * interactive painting, tablet
+ * force fields
+ * urban planning, liquid architecture
+ * areas (e.g. shopping, travel, production) and resources, supply/demand
+ * *game*, compete, grow, local views on the world
+ * metadada info *search*/browse
+ * photo/music collection
+ * box world, 3 dof
+ * Mediashelf
+ * Catan
+ * oss, patents
+
 = mechanisms =
+
+ * state/behaviour
+ * structure vs. event (Lévi-Strauss)
+ * work (of art), program code vs. process, interaction
+ * mobile architecture, mobile agents
+ * motion: 6dof motion, rotation, size, shape, sound, colour
+ * soa, ajax
+ * traces, curiosity, snails, trails
+ * history, context
+ * mas, fipa, jade, searle (speech acts), dennett (intentional stance)
+ * geo-info, context, sensors/actuators/effectors
+ * reasoning, 3apl, prolog
+ * visual programming
+ * w3c, semweb, rdf, owl
+ * libraries: rdflib, pyparsing, karrigell
+ * jazz, improvisation
+ * interference, doppler sound fields
+ * self-organisation
+ * distributed reasoning, decision-making
 
 = sources of inspiration =
 
@@ -76,10 +54,37 @@ http://pastiche.googlecode.com/files/python-logo.gif
    * music
  * sociology
 
+ * duchamp, ready-mades
+ * Schwitters, Merz-Bau
+ * Xenakis
+ * Le Corbusier: poème électronique, promenade architecturale, musée à croissance illimitée
+ * Gehry
+ * Hadid
+   * [http://www.arcspace.com/architects/hadid/kartal_pendik/kp.html]
+   * [http://www.arcspace.com/architects/hadid/cagliari/cagliari.html]
+ * Coop Himmelb(l)au
+ * OMA: Bordeaux
+ * Novak
+ * Oosterhuis
+ * Superstudio
+ * Szeemann: Junggesellenmaschinen
+ * Tinguely
+ * dada, arp
+ * vian
+ * gainsbourg
+ * moholy-nagy
+ * lissitzky
+ * derrida: deconstruction, différance
+ * Kafka: Schloss, Strafkolonie
+ * Axelrod: collaboration, competition, PIPD
+
 = demos =
 
 tbd. [http://pastiche.info pastiche.info]
 
 = implementation =
 
+ * App/Platform --> Container (Borg)
  * Agency(Agent): control groups of agents, forward messages
+ * p2p vs. server-based
+ * mobility, ad-hoc networks
