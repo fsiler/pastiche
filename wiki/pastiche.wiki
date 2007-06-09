@@ -43,6 +43,8 @@ http://pastiche.googlecode.com/files/python-logo.gif
  * interference, doppler sound fields
  * self-organisation
  * distributed reasoning, decision-making
+ * emergence
+ * just-in-time
 
 = sources of inspiration =
 
