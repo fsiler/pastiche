@@ -4,9 +4,14 @@ http://pastiche.googlecode.com/files/python-logo.gif
 
 = introduction =
 
+The pastiche framework is an enabler for a broad class of applications where rules of behaviour are modelled asynchronously for a multitude of cooperative entities (known as agents).
+
+Some applications of pastiche in the artistic domain will be demonstrated at [http://pastiche.info pastiche.info].
+
 = scenarios =
 
  * info navigation, organisation
+ * metadada: info *search*/browse
  * mind mapper, semantic idea network
  * chess: simultaneous game, strategy builder, collaborative planning
  * puzzle
@@ -15,12 +20,11 @@ http://pastiche.googlecode.com/files/python-logo.gif
  * force fields
  * urban planning, liquid architecture
  * areas (e.g. shopping, travel, production) and resources, supply/demand
- * *game*, compete, grow, local views on the world
- * metadada info *search*/browse
- * photo/music collection
+ * *game*: compete, collaborate, grow, local views on the world
+ * Catan
+ * photo/music collection sharing
  * box world, 3 dof
  * Mediashelf
- * Catan
  * oss, patents
 
 = mechanisms =
