@@ -95,3 +95,6 @@ tbd. [http://pastiche.info pastiche.info]
  * Agency(Agent): control groups of agents, forward messages
  * p2p vs. server-based
  * mobility, ad-hoc networks
+ * [http://karrigell.sourceforge.net/ karrigell]
+ * [http://pyjamas.pyworks.org/ pyjamas]
+ * [http://rdflib.net/ rdflib]
