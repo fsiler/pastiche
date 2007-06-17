@@ -50,6 +50,7 @@ Some applications of pastiche in the artistic domain will be demonstrated at [ht
  * distributed reasoning, decision-making
  * emergence
  * just-in-time
+ * viewpoint engineering
 
 = sources of inspiration =
 
@@ -59,7 +60,9 @@ Some applications of pastiche in the artistic domain will be demonstrated at [ht
  * arts
    * literature
    * music
- * sociology
+   * visual
+   * digital, interactive performance
+ * sociology, social psychology
 
  * duchamp, ready-mades
  * Schwitters, Merz-Bau
