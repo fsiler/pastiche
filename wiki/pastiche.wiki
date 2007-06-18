@@ -92,7 +92,7 @@ Some applications of pastiche in the artistic domain will be demonstrated at [ht
  * Kafka: Schloss, Strafkolonie
  * Axelrod: collaboration, competition, PIPD
 
-= demos =
+= experiments =
 
 tbd. [http://pastiche.info pastiche.info]
 
@@ -100,8 +100,9 @@ tbd. [http://pastiche.info pastiche.info]
 
  * App/Platform --> Container (Borg)
  * Agency(Agent): control groups of agents, forward messages
+ * pastiche as karrigell service
  * p2p vs. server-based
- * mobility, ad-hoc networks
+ * mobility, ad-hoc networks, Pyro???
  * [http://karrigell.sourceforge.net/ karrigell]
  * [http://pyjamas.pyworks.org/ pyjamas]
  * [http://rdflib.net/ rdflib]
