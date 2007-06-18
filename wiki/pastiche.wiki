@@ -52,6 +52,8 @@ Some applications of pastiche in the artistic domain will be demonstrated at [ht
  * emergence
  * just-in-time
  * viewpoint engineering
+ * self-configuring, self-repairing, autonomic
+ * bricoleur, diy, MAKE, oss
 
 = sources of inspiration =
 
@@ -103,4 +105,3 @@ tbd. [http://pastiche.info pastiche.info]
  * [http://karrigell.sourceforge.net/ karrigell]
  * [http://pyjamas.pyworks.org/ pyjamas]
  * [http://rdflib.net/ rdflib]
-
