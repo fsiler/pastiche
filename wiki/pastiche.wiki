@@ -40,6 +40,7 @@ Some applications of pastiche in the artistic domain will be demonstrated at [ht
  * history, context
  * mas, fipa, jade, searle (speech acts), dennett (intentional stance)
  * geo-info, context, sensors/actuators/effectors
+ * GoogleMap-mash-ups, [http://googlemapsmania.blogspot.com/ GoogleMapsMania], [http://www.nederkaart.nl/ Nederkaart]
  * reasoning, 3apl, prolog
  * visual programming
  * w3c, semweb, rdf, owl
@@ -102,3 +103,4 @@ tbd. [http://pastiche.info pastiche.info]
  * [http://karrigell.sourceforge.net/ karrigell]
  * [http://pyjamas.pyworks.org/ pyjamas]
  * [http://rdflib.net/ rdflib]
+
