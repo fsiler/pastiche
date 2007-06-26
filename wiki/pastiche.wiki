@@ -1,6 +1,6 @@
 #summary a hodge-podge of ideas
 
-http://pastiche.googlecode.com/files/python-logo.gif
+http://pastiche.info/images/pastiche_128.png
 
 = introduction =
 
@@ -106,3 +106,5 @@ tbd. [http://pastiche.info pastiche.info]
  * [http://karrigell.sourceforge.net/ karrigell]
  * [http://pyjamas.pyworks.org/ pyjamas]
  * [http://rdflib.net/ rdflib]
+
+http://pastiche.googlecode.com/files/python-logo.gif
