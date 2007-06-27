@@ -27,6 +27,7 @@ Some applications of pastiche in the artistic domain will be demonstrated at [ht
  * Mediashelf
  * oss, patents
  * dynamic typography: zin-builder (sinnbilder)
+ * arty-ficial intelligence
 
 = mechanisms =
 
