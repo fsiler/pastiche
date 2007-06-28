@@ -28,6 +28,7 @@ Some applications of pastiche in the artistic domain will be demonstrated at [ht
  * oss, patents
  * dynamic typography: zin-builder (sinnbilder)
  * arty-ficial intelligence
+ * [http://www.tesla-berlin.de/_page.php?aktion=SHOW_PAGE&Page_ID=177 Poème Electronique am Tesla]
 
 = mechanisms =
 
