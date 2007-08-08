@@ -16,7 +16,7 @@ Some applications of *pastiche* will be demonstrated at [http://pastiche.info pa
  * mind mapper, semantic idea network
  * Mediashelf
  * photo/music collection sharing
- * story maker: take two or three unrelated terms and try to find a link between them (convex hull, shortest path)
+ * story maker: take two or three unrelated terms and try to find a link between them (transitive/convex hull, shortest path)
 
 == games ==
 
