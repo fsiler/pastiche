@@ -34,6 +34,7 @@ Some applications of *pastiche* will be demonstrated at [http://pastiche.info pa
 == misc ==
 
  * collage
+ * fragments
  * interactive painting, tablet
  * box world, 3 dof
  * oss, patents
