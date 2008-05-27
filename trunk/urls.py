@@ -10,4 +10,5 @@ urlpatterns = patterns('pastiche.dada.views',
 urlpatterns += patterns('',
 	(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
 	(r'^admin/(.*)', admin.site.root),
+	(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 )
