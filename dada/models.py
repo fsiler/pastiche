@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib import admin
-import datetime
+from datetime import datetime
 
 #TODO: move admin stuff to admin.py, see below
 
@@ -10,7 +10,7 @@ class Item(models.Model):
 #	parents = models.ManyToManyField(Item, related_name='children')
 	rating = models.IntegerField()
 #	user_id = Field(Integer)
-	user_id = models.CharField(max_length=128)
+#	user_id = models.CharField(max_length=128)
 	date = models.DateField(auto_now=True)
 	
 	def __unicode__(self):
@@ -18,9 +18,9 @@ class Item(models.Model):
 
 
 class Comment(models.Model):
-	date = models.DateField(auto_now=True)
 	text = models.TextField(null=True, blank=True)
 	item = models.ForeignKey(Item, related_name='comments')
+	date = models.DateField(auto_now=True)
 
 	def __unicode__(self):
 		return "%s: %s (%s)" % (self.item, self.text, self.date)
@@ -29,6 +29,7 @@ class Comment(models.Model):
 class Tag(models.Model):
 	name = models.CharField(max_length=128)
 	items = models.ManyToManyField(Item, related_name='tags')
+	date = models.DateField(auto_now=True)
 
 	def __unicode__(self):
 		return self.name
@@ -68,12 +69,12 @@ class TagInline(admin.StackedInline):
 
 class ItemOptions(admin.ModelAdmin):
 	model = Item
-	inlines = [CommentInline, TagInline]
+	inlines = [CommentInline]
 
 
 admin.site.register(Item, ItemOptions)
-admin.site.register(Comment, CommentInline)
-admin.site.register(Tag, TagInline)
+admin.site.register(Comment)
+admin.site.register(Tag)
 admin.site.register(Task)
 admin.site.register(Link)
 
