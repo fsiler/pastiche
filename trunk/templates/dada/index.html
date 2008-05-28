@@ -1,0 +1,30 @@
+{% extends "dada/base.html" %}
+
+{% block title %}
+	production files am51584
+{% endblock %}
+
+{% block header %}
+	production files am51584
+{% endblock %}
+
+{% block content %}
+	{% if items %}
+		<table border=1 cellspacing=0 cellpadding=3>
+		<tr style:background-color:#000000;color:#ffffff;>
+			<th>an</th>
+			<th>pn</th>
+			<th>dpro</th>
+			<th>pa</th>
+			<th style=width:100%>ti</th>
+		</tr>
+		{% for item in items %}
+			<tr>
+				<td>{{ item.title }}</td>
+			</tr>
+		{% endfor %}
+		</table>
+	{% else %}
+		<p>No items are available.</p>
+	{% endif %}
+{% endblock %}

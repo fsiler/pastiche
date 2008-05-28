@@ -1,0 +1,137 @@
+/* GS/20070209 */
+.tColor1 { background-color:#4c6382 !important; }
+.tColor2 { background-color:#404955 !important; }
+.tColor3 { background-color:#b42821 !important; }
+
+/* HK 2007-04-03 */
+.tColor1 a:link, .tColor1 a:visited, 
+.tColor2 a:link, .tColor2 a:visited,
+.tColor3 a:link, .tColor3 a:visited { color:#fff;text-decoration:underline;}
+.tColor1 a:hover, .tColor1 a:focus, .tColor1 a:active,
+.tColor2 a:hover, .tColor2 a:focus, .tColor2 a:active,
+.tColor3 a:hover, .tColor3 a:focus, .tColor3 a:active { color: #fff; text-decoration:none; }
+
+/* PR/20070405 auskommentiert und auf cssHome.css verlegt */
+/* GS/20070206 set background-image to page-asset 'page.jpg' */
+/*
+#epoTeaserFH { height:14.5em;background:#dadfe3 no-repeat right top;border-bottom:solid 1px #fff;position:relative;width:100%;}
+*/
+/* GS/20070209 need more flexibility... (colors are set separately) */
+/*
+#epoTeaserFH .epoTeaserLeft { width:16.6em;height:14.5em;float:left; }
+#epoTeaserFH .epoTeaserRight { background-color:transparent; }
+*/
+
+/* on channel only */
+/* GS/20070206 set background-image to page-asset 'page.jpg' */
+#epoContentChannel { background:#D5D6DA no-repeat top left; height:12.5em; margin:0; }
+
+/* GS/20070208 use same tagging for channel-teaser as on homepage */
+#epoContentLeft .teaser { border-bottom:solid 1px #fff;padding:15px;color:#fff; }
+#epoContentLeft .teaser h3 { font-size:150%;padding:0;margin:0px;margin-bottom:10px;color:#fff;border:none }
+#epoContentLeft .teaser h3 a, #epoContentLeft .teaser h3 a:visited, #epoContentLeft .teaser h3 a:hover, #epoContentLeft .teaser h3 a:focus, #epoContentLeft .teaser h3 a:active { color:#fff;text-decoration:underline; }
+
+#missingLanguageInfo { color:#ff0000; font-weight:bold; border:solid 1px #aaadb1; padding:0.75em;}
+
+th, td { vertical-align:top; }
+
+div.epoQuickPulldown label a:link, div.epoQuickPulldown label a:visited  { 
+	text-decoration:none;color:#ffffff; 
+	}
+div.epoQuickPulldown label a:hover { text-decoration:underline; }
+
+.thumb { text-align:center; }
+#vorschau .thumb img { height:6.41em;} /* removed width HK, 2007-04-16 */
+#vorschau .thumb a { float:left;padding:0.25em;margin:0 0.25em 0.25em 0;width:9.91em;height:6.41em;border:solid 1px #aaadb1; }
+#vorschau .thumb a:hover { background-color:#e5e6e8;border:solid 1px #be0f05; }
+#XepoGalleryLeft img.gallery { width:100%; height:100%; }
+
+table.noborder {}
+table.noborder th, table.noborder td { color:#0e2034;padding-left:0px;border:none; }
+
+p.alternative { font-weight:bold; }
+
+/* HK - 20070314 - h2 gets red always on request of KMC */
+h2 { color:#be0f05; }
+
+#epoLogo { z-index:100; }
+
+
+table.wfpagelist {}
+table.wfpagelist th, table.wfpagelist td { color:#0e2034; }
+table.wfpagelist td.wfs { width:10%; }
+table.wfpagelist td.wfs-authoring { background-color:#ffff99; }
+table.wfpagelist td.wfs-review { background-color:#ffaa55; }
+table.wfpagelist td.wfs-live { background-color:#eeffee; }
+input#jobtitle { border:none; background-color:#ffffff; }
+
+/* HK - 2007-04-18 */
+div.image_caption    { color: #666; font-size: 85%; margin: 4px 4px 6px 4px; text-align: justify; }
+
+/* HK - 2007-06-14 */
+.epoQuickPulldown form label a, 
+.epoQuickPulldown form label a:link,  
+.epoQuickPulldown form label a:visited,  
+.epoQuickPulldown form label a:active 	{ text-decoration: underline; }
+
+.epoQuickPulldown form label a:hover	{ text-decoration: none; } 
+
+.provider_epo	{ background-color: #efefef; }
+.provider_std	{ background-color: #ffffff; }
+
+/* HK - 2008-02-18 */
+table.epoTeaMoreTable		{ border: none; width:auto;float:right;}
+table.epoTeaMoreTable td	{ text-align: right; vertical-align:middle; margin:0; padding:0; border:none;height:24px;}
+td.rssIcon					{ width: 14px; }
+td.rssIcon img				{ margin: 0; margin-left: 3px; height: 14px; width: 14px; }
+
+/* HK - 2008-01-22 */
+/* automatic generated image captions */
+.imgcaptionTXT 		{ font-size: 0.9em; color: #666; text-align: left; }
+p.imgcaptionALT 		{ margin-top: 2px; margin-bottom: 6px; font-size: .65em; text-align: right; }
+span.imgcaptionALT 	{ padding: 2px; padding-left: 4px; padding-right: 4px; background: #888; color: #fff; }
+.imgcaption 			{ text-align: center; border: 1px solid #DDD; padding: 1em; margin: 1em 0; width: 9em; }
+
+/*
+.arc90_imgcaptionTXT {
+	font-size: .8em;
+	color: #666;
+	text-align: left;
+}
+p.arc90_imgcaptionALT {
+	margin-top: 2px;
+	margin-bottom: 6px;
+	font-size: .65em;
+	text-align: right;
+}
+span.arc90_imgcaptionALT {
+	padding: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	background: #888;
+	color: #fff;
+}
+.arc90_imgcaption {
+	text-align: center;
+	border: 1px solid #DDD;
+	padding: 1em;
+	margin: 1em 0;
+	width: 9em;
+} */
+.floatl, .float-left 	{ float: left; margin-right: 1em; }
+.floatr, .float-right	{ float: right; margin-left: 1em; }
+
+.arc90_right, .arc90_left { cursor: default; }
+.arc90_right 	{ float: right; }
+.arc90_left 	{ float: left; }
+
+/* HK | 2008-03-20 | additional styles for OPS */
+.hilite { color:#3300ff }
+.xmp {display:inline; font-size:110%; }
+.soapStyle { color:green }
+.requestStyle { color:teal }
+.xmlRequestDiv { width:490px; overflow:auto; background-color:#efefef; border: solid 1px silver; }
+.soapxmlRequestDiv { width:490px; height:150px; overflow:auto}
+.soapXmlResponseDiv { width:490px; height:120px; overflow:auto}
+
+div.noFlashPlayer { background-color: #efefef; border: solid 1px silver; color: red; padding: 3px; }
