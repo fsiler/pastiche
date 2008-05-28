@@ -7,7 +7,7 @@ from datetime import datetime
 
 class Item(models.Model):
 	title = models.CharField(max_length=128)
-#	parents = models.ManyToManyField(Item, related_name='children')
+	children = models.ManyToManyField('self', symmetrical=False, related_name='parents')
 	rating = models.IntegerField()
 #	user_id = Field(Integer)
 #	user_id = models.CharField(max_length=128)
