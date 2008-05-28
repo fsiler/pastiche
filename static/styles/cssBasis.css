@@ -1,0 +1,199 @@
+/* -------------------------------- */
+/*  Stand: 18. April 07 15:00  (HK) */
+/* -------------------------------- */
+
+body { margin:1px;padding:0;font-size:75%;font-family:Arial,Helvetica,sans-serif;color:#425060;background:#E4E6E7;}
+table, td, tr, th {font-size:100%;}
+
+/* default-bullet fuer Listen */
+div#epoContentCenter ul {list-style-type:square;}
+
+/******************************************** CONTENT ALL PAGES ***********************************/
+#wrapperBug { text-align:center; width:100% }
+
+#wrapper { width:83em;margin:0 auto;text-align:left;padding:0;background-color:#FFFFFF;border-left: solid #ffffff 1px;border-right: solid #ffffff 1px; } /* HK, 2007-04-18: removed  url(../images/basis/ffffff.gif) repeat */
+
+
+#epoContent { width:100%;position:relative;top:0;left:0; }
+/* Content Left  */
+#epoContentLeft { width:16.75em;float:left;padding:0;margin:0; }
+
+/* Content Center und Right: die Breite ist kleiner wg. 1.25em für den Abstand zw. der Nav und dem Inhalt */
+#epoContentCenterRight { width:65em;float:right;padding:0;margin:0;position:relative; }
+
+/* Content Center: die Breite ist kleiner wg. 1.25em für den Abstand zw. dem Inhalt und dem Promo-Box */
+#epoContentCenter { width:47em;float:left;position:relative;padding:0;margin:0; }
+
+/* Content Right */
+#epoContentRight { width:16.75em;background-color:#F4F5F7;float:right;padding-bottom:10px;position:relative; }
+
+/* Half Width Teaser */
+/* Breite am 2.4.07 von 23.25 auf 23.20 verringert */
+.epoTeaSmall { float:left;width:23.20em;margin:0;padding:0; }
+/* Full Width Teaser */
+.epoTeaBig { float:left;width:47em;display:block;margin:0;padding:0; }
+
+#print { border-bottom:1px solid #aaadb1;margin:5.15em 15px 0 15px;font-size:0.95em; }
+#print a:link,#print a:visited { text-decoration:none; }
+#print a:hover,#print a:focus,#print a:active { text-decoration:underline; }
+.epoPrint { display:none }
+.epoPrintBold { display:none }
+
+
+#promo { margin:19px 15px -2px 15px;color:#ffffff;font-size:0.95em; }
+#promo ul { margin:0;padding:0;list-style-type:none;margin-bottom:5px }
+#promo ul li { line-height:160% }
+#promo .epoPromoLine { clear:both;padding:0 0 1px 0;margin:1px 0 5px 0;color:#aaadb1;height:1px;border:none;border-top:solid 1px; }
+#promo h4.promo { margin:0;padding:0 }
+#promo h4.promoWeiss { color:#ffffff;margin:0; }
+
+#promoImportantBlue { padding:10px 10px 10px 10px;margin:15px 0 7px 0;background-color:#4c6382; }
+#promoImportantRed { padding:10px 10px 10px 10px;margin:15px 0 7px 0;background-color:#b42821; }
+#promoImportantGrey { padding:10px 10px 10px 10px;margin:15px 0 7px 0;background-color:#404955; }
+h4.promoWeiss a:link, h4.promoWeiss a:visited { color:#ffffff;text-decoration:underline; } 
+h4.promoWeiss a:hover, h4.promoWeiss a:focus, h4.promoWeiss a:active { color:#ffffff;text-decoration:none; }
+
+
+/* Breadcrumbs */
+#epoBreadcrumbs { padding-top:7px;font-size:.95em;line-height:130%; }
+#epoBreadcrumbs span { padding-left:8px;padding-right:8px;color:#7f848b; }
+#epoBreadcrumbs a:link,#epoBreadcrumbs a:visited { text-decoration:underline; }
+#epoBreadcrumbs a:hover,#epoBreadcrumbs a:focus,#epoBreadcrumbs a:active { text-decoration:none; }
+
+/*************************** Headlines *******************************/
+h1,h2,h3,h4,h5,h6 { padding:0;margin:0;color:#425060 }
+h1 { font-size:1.6em;border-bottom:1px solid #aaadb1;padding-bottom:2px;margin-top:27px;margin-bottom:16px; }
+h2 { font-size:1.25em;margin-top:25px;margin-bottom:9px; color:#be0f05; } /*color added by HK on 2007-04-12 */
+h2.red { color:#be0f05; }
+h2 a,h2 a:visited,h2 a:link { color:#be0f05;text-decoration:underline; }
+h2 a:hover,h2 a:focus,h2 a:active { text-decoration:none; }
+h3 { font-size:1.25em;margin-top:18px;margin-bottom:4px; }
+h4,h5{ font-size:1em;margin-top:9px; }
+/* Link Headline */
+h4 a:link,h5 a:link,h4 a:visited,h5 a:visited { font-weight:bold;text-decoration:underline; } 
+h4 a:hover,h5 a:hover,h4 a:focus,h5 a:focus,h4 a:active,h5 a:active { color:#be0f05;text-decoration:none; }
+h6 { font-size:.95em;margin-top:7px;margin-bottom:2px;font-weight:bold; }
+
+/*************************** Text *******************************/
+.abstract, .b {	font-weight:bold;display: block; }
+.copy { color:#000; }
+.channel { color:#425060; }
+.caption { color:#000;font-size:0.95em; }
+.red { color:#be0f05; }
+.error { color:#f00; font-weight:bold; }
+abbr,acronym { cursor:help;border:none; }
+
+/*************************** Links *******************************/
+a:link,a:visited { color:#425060;text-decoration:underline; }
+a:hover,a:focus,a:active { color:#be0f05;text-decoration:none; }
+a.copy:link,a.copy:visited { color:#000;text-decoration:underline; }
+a.copy:hover,a.copy:focus,a.copy:active { color:#be0f05;text-decoration:none; }
+a.caption:link,a.caption:visited { color:#000;font-size:.95em;text-decoration:underline; }
+a.caption:hover,a.caption:focus,a.caption:active { color:#be0f05;font-size:.95em;text-decoration:none; }
+
+.topofpage { margin-top:8px; }
+.topofpage a:link,.topofpage a:visited { color:#7f848b;font-size:.95em;margin:0;text-decoration:none; }
+.topofpage a:hover,.topofpage a:focus,.topofpage a:active { color:#be0f05;text-decoration:underline; }
+
+/*************************** Lists ***********************/
+ul.copy { margin:0;padding:0;list-style-type:none; margin-top:3px; }
+ul.copy li { color:#000;line-height:150% }
+ul.copy li a:link,ul.copy li a:visited { color:#000;text-decoration:underline; }
+ul.copy li a:hover,ul.copy li a:focus,ul.copy li a:active { color:#be0f05;text-decoration:none; }
+#epoContentCenter .epoTeaLeft .epoTeaCopy ul.bullet, ul.bullet { margin:0;margin-left:1.25em;margin-top:8px;padding:0;list-style-type:square;color:#000;line-height:165%; }
+ul.bulletsub { margin:0;margin-left:1.3em;padding:0;list-style-type:square;color:#000;line-height:165%; }
+.list { margin:0;margin-left:1.3em;padding:0; }
+
+
+/*************************** Layer + Elements *******************************/
+.more,.topofpage { float:right;text-align:right; }
+.hide { display:none; }
+.clear { clear:both; }
+.space { margin:0.5em; }
+.devider { margin-right:.5em; }
+.epoLine { padding:0;margin:15px 0 8px 0;color:#aaadb1;height:1px;border:none;border-top:solid 1px;clear:both; }
+
+/* Images */
+img { border:0; }
+.copy img { float:left;margin:3px 15px 5px 0; }
+.abstract img { float:left;margin:3px 15px 5px 0;width:auto; }
+img.arrowl { margin:0 3px 1px 8px; }
+img.arrowr { margin:0 8px 1px 3px; }
+
+/* Forms */
+form { padding:0;margin:0; }
+form label,input { font-size:100%; }
+fieldset { border:none;padding:0;margin:0; }
+label { line-height:150%; }
+select { font-size:.95em;width:98.4%; }
+input { width:97%; }
+input.withGo { width:80%; }
+input.meta { width:auto; padding-left:3px; }
+input.go { width:2.2em; }
+input.gometa { width:auto;margin-right:0.5em;margin-bottom:1px;border-right:1px solid #666666;border-bottom:1px solid #666666;border-left:1px solid #eeeeee;border-top:1px solid #eeeeee;}
+label,select,input[type=checkbox],input[type=radio],input[type=button],input[type=submit] {cursor: pointer;}
+input, select, textarea { color:#425060;}
+
+
+/**************************************************************************************************************/
+/******************************************** NAVIGATION ALL PAGES ***********************************/
+
+/* neu 30.03.07: fuer #epoHeader und #epoLogo img gibt es keine Style-Definitionen mehr
+in #epoLogo muss auch die Höhe des Logo definiert werden, weil es sonst in IE 3px hoeher ist und zu Umbruechen fuehrt */
+#epoLogo { position:relative;float:right;height:82px;overflow:hidden;}
+/* #epoMetaNavContainer genauso hoch wie Logo, so dass durch feste Hoehe Reiter nach oben vergroessert werden. */
+#epoMetaNavContainer { height:82px;position:relative;bottom:0;}
+/* ******************************** neu Ende *********************************************** */
+
+#epoMetaNav { float:left;margin-left:15px;margin-top:0.41em;position:absolute;top:0;left:0;font-size:1.0em;width:62.0em; }
+#epoMetaNav a,label { margin-right:.5em;text-decoration:none; }
+#epoMetaNav a:hover,#epoMetaNav a:focus,#epoMetaNav a:active  { color:#be0f05;text-decoration:underline; }
+
+/* Channel Navigation */
+#epoChannelNav { position:absolute;bottom:0;left:0;width:100%; }
+#epoChannelNav ul  { padding-left:0;margin-left:0;color:#fff; }
+#epoChannelNav ul li { display:inline; white-space:nowrap;}
+#epoChannelNav ul li a,#epoChannelNav ul li a:visited { padding:0 15px;width:13.56%;background-color:#7f848b;color:#fff;text-decoration:none;float:left;border-right:1px solid #fff;font-weight:bold;font-size:1.4em;line-height:185%;border-bottom:1px solid #fff; }
+#epoChannelNav ul li a:hover,#epoChannelNav ul li a:focus,#epoChannelNav ul li a:active { background-color:#2a323d; }
+
+#epoChannelNav ul li a.sel { background-color:#2a323d; border-bottom:1px solid #2a323d; }
+#epoChannelNav ul li a.sel,#epoChannelNav ul li a.sel:visited { background-color:#2a323d; border-bottom:1px solid #2a323d; }
+#epoChannelNav ul li a.sel:hover,#epoChannelNav ul li a.sel:focus,#epoChannelNav ul li a.sel:active { background-color:#2a323d; }
+
+#epoIndexNav { padding:0.3em 1.25em 0.4em 1.25em;text-align:left;background-color:#2A323D;position:relative;top:0;left:0;}
+#epoIndexNav a { color:#d4d6d8;margin-right:1em;text-decoration:none;font-size:100%; }
+#epoIndexNav a:hover,#epoIndexNav a:focus,#epoIndexNav a:active { color:#fff;text-decoration:underline;font-size:100%; }
+#epoIndexNav a.sel { color:#fff;font-weight:bold;font-size:100%; }
+
+
+/* Content Left Navigation  */
+#epoContentLeft .epoContentNav ul a:link,
+#epoContentLeft .epoContentNav ul a:visited { font-size:1em;color:#0e2034;display:block;margin:0;padding:0.25em;padding-left:13px;padding-right:.6em;border-top:1px solid #aaadb1;text-decoration:none; }
+#epoContentLeft .epoContentNav ul a:hover,
+#epoContentLeft .epoContentNav ul a:focus,
+#epoContentLeft .epoContentNav ul a:active {color:#fff;text-decoration:none;background-color:#2a323d;}
+#epoContentLeft .epoContentNav ul a.hi,#epoContentLeft .epoContentNav ul a.hi:visited
+{color:#fff;background-color:#2a323d;font-weight:bold;}
+#epoContentLeft .epoContentNav ul a.sel {font-weight:bold;}
+
+#epoContentNav {border-left:1px solid #aaadb1;border-right:1px solid #aaadb1;}
+.epoContentNav ul {	list-style:none;padding:0;margin:0;margin-bottom:3px;border-bottom:1px solid #aaadb1;background-color:#f4f5f7;border-left:1px solid #aaadb1; }
+.epoContentNav ul.top { border-left:0;margin-top:0; }
+.epoContentNav ul ul { margin-left:13px; }
+.epoContentNav li { display:inline;padding:0;margin:0; }
+.epoContentNav ul ul { background-color:#e4e6e7; } /* Level 4 */
+.epoContentNav ul ul ul { background-color:#c9cbce; } /* Level 5 */
+.epoContentNav ul ul ul ul { background-color:#c2c2c2; } /* Level 6 */
+.epoContentNav ul ul ul ul ul { background-color:#a3a3a3; } /* Level 7 */
+.epoContentNav ul ul ul ul ul ul { background-color:#939393; } /* Level 8 */
+.epoContentNav ul ul ul ul ul ul ul { background-color:#838383; } /* Level 9 */
+.epoContentNav ul ul ul ul ul ul ul ul { background-color:#737373; } /* Level 10 */
+.epoContentNav ul ul ul ul ul ul ul ul ul { background-color:#636363; } /* Level 11 */
+.epoContentNav ul ul ul ul ul ul ul ul ul ul { background-color:#535353; } /* Level 12 */
+
+/* Footer */
+#epoFooter { text-align:center;padding:3.25em 0 1.25em 0;font-size:0.94em; }
+#epoFooter a:link,#epoFooter a:visited { margin-left:0.5em;margin-right:0.5em; text-decoration:underline;}
+/* fuer alle Browser links und rechts gleicher Abstand -> rechts unnoetiger Abstand in alten Browsern */
+#epoFooter .space { margin-left:0.5em;margin-right:0.5em; }
+#epoFooter a:hover,#epoFooterHome a:focus,#epoFooter a:active  {color:#be0f05; text-decoration:none; }

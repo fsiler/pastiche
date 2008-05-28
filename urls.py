@@ -3,6 +3,7 @@ from django.contrib import admin
 from pastiche import settings
 
 urlpatterns = patterns('pastiche.dada.views',
+	(r'^/$', 'dada.index'),	#TODO: not working
 	(r'^dada/$', 'index'),
 	(r'^dada/(?P<item>\d+)/$', 'detail'),
 )

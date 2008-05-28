@@ -1,0 +1,98 @@
+/* ------------------------- */
+/*  Stand: 9. April 07 23:00 */
+/* ------------------------- */
+
+/* Hintergrundbild wird im HTML-Code direkt per Inline-Style eingebunden */
+#epoTeaserFH { height:14.5em;background:#dadfe3 no-repeat right top;border-bottom:solid 1px #fff;position:relative;width:100%;}
+
+#epoTeaserFH .epoTeaserLeftRed { width:16.6em; background-color:#b42821;height:14.5em;float:left; }
+#epoTeaserFH .epoTeaserLeftBlue { width:16.6em; background-color:#4C6382;height:14.5em;float:left; }
+
+/* Farbe .tColor1 bis .tColor3 wird in cssRedef.css definiert, 
+overflow:hidden, damit bei verschieden langen Textinhalten keine Lücke unter dem kürzeren entsteht */
+#epoTeaserFH .epoTeaserRight, #epoTeaserFH .epoTeaserLeft {height:14.5em;float:left;overflow:hidden; }
+#epoTeaserFH .epoTeaserRight { width:24.8em;}
+#epoTeaserFH .epoTeaserLeft { width:16.6em; }
+
+#epoTeaserFH h3,#epoTeaserFH p {margin-right:1.2em;margin-bottom:0.6em;}
+#epoTeaserFH h3 {margin-left:0.72em;margin-top:0.8em;color:#FFF;font-size:150%;border:none;}
+#epoTeaserFH p {margin-left:1.2em;margin-top:0;color:#fff;}
+
+#epoTeaserFH a { color:#fff;text-decoration:underline; }
+#epoTeaserFH a:link,#epoTeaserFH a:visited { color:#fff;text-decoration:underline; }
+#epoTeaserFH a:hover,#epoTeaserFH a:focus,#epoTeaserFH a:active { color:#fff;text-decoration:none; }
+
+
+/*  IE 6  */
+* html #epoTeaser { height:13.6em;}
+* html #epoTeaser .epoTeaser1 { height:13.6em;}
+* html #epoTeaser .epoTeaser2 { height:13.6em;}
+
+/* am 4.4.07 deaktiviert
+#epoHeader { position:relative;width:100%;height:6.8em; }*/
+
+.morehome { text-align:right;margin-right:15px; }
+
+/* Channel Navigation */
+/* gesamter Balken incl. 3 Buttons und grau rechts unter Bild */
+#epoChannelNavHome { 
+	width:100%;background:#e4e6e7;margin:0;padding:0;height:2.25em;
+	}
+/* Buttons, getrennt von a, wg Box Model Fehler in IE 5 */
+.epoChannelNavHomeBut {
+	float:left;width:13.75em;border-right:1px solid #fff;background:#2a323d;overflow:hidden;
+	} 
+.epoChannelNavHomeBut a:link, .epoChannelNavHomeBut a:visited { 
+	display:block;padding:0 0.95em;width:11.85em;font-size:130%;color:#fff;font-weight:bold;line-height:175%;text-decoration:none;
+	}
+.epoChannelNavHomeBut a:hover, .epoChannelNavHomeBut a:focus, .epoChannelNavHomeBut a:active { 
+	color:#fff;background-color:#7f848b; 
+	}
+
+/* Line */
+.epoHomeLine { padding:0;margin:15px 0 8px 0;color:#d4d6d8;height:1px;border:none;border-top:solid 1px;clear:both; }
+
+#epoContent { margin-top:20px; }
+
+/* Content Left */
+#epoContentLeftHome { width:41.35em;float:left;border-right:1px solid #aaadb1; }
+#epoContentCenterHome h2 {color:#be0f05;margin:0 15px 10px 0;font-size:150%;padding-top:0;}
+#epoContentLeftHome h2 {color:#be0f05;margin:0 15px 10px 15px;font-size:150%;padding-top:0;}
+#epoContentLeftHome .news {margin:0 15px 15px 15px;}
+#epoContentLeftHome .news img {margin-bottom:5px;float:left;margin-right:15px}
+
+/* Content Center + Right */
+#epoContentCenterRightHome { width:40.5em;position:relative;float:right; }
+#epoContentCenterHome {	padding:0;width:23em;float:left; }
+#epoContentCenterHome .updates {margin:0 15px 10px 0;}
+#epoContentRightHome { width:17em;float:right; }
+
+/* Quick Access */
+.epoQuickAccess { background-color:#b42821; padding: 7px 15px; border-bottom:solid 1px #fff; color:#fff; font-weight:bold; }
+.epoQuickPulldown { background-color:#2A323D; padding:0.6em 1.25em; border-bottom:solid 1px #fff; color:#fff; }
+.epoQuickPulldown label { color:#fff;font-size:100%;font-weight:bold; margin:0;display:block }
+.epoQuickPulldown option, .epoQuickPulldown select { margin:3px 0.5em 3px 0; padding:0; width:12.2em; }
+.epoQuickPulldown input.go { width:2.2em; margin:0 0 3px 0;padding:0 0 1px 0; }
+
+/* Quick Links */
+#epoQuickLinks ul { padding-left:0;margin-left:0;margin-top:0;background-color:#e4e6e7;color:#425060; }
+#epoQuickLinks ul li { display:inline; }
+#epoQuickLinks ul li a,#epoQuickLinks ul li a:visited { padding:0.2em 15px;background-color:#e4e6e7;color:#0e2034;text-decoration:none;border-bottom:1px solid #aaadb1; font-weight:bold;line-height:175%; display:block;}
+#epoQuickLinks ul li a:hover,#epoQuickLinks ul li a:focus,#epoQuickLinks ul li a:active { text-decoration:underline; }
+
+.epoQuickWhite a:link,.epoQuickWhite a:visited { color:#ffffff; }
+.epoQuickWhite a:hover,.epoQuickWhite a:focus,.epoQuickWhite a:active { color:#ffffff; }
+
+/* News Headlines */
+.epoNewsDatum { color:#425060;font-size:1em;margin-top:9px;font-weight:bold; }
+
+h4.epoNewsHeadline { color:#425060;font-size:1em;font-weight:normal;padding:0;margin:0 }
+h4.epoNewsHeadline a, h4.epoNewsHeadline a:visited { color:#425060;text-decoration:underline;font-weight:normal; } 
+h4.epoNewsHeadline a:hover, h4.epoNewsHeadline a:focus, h4.epoNewsHeadline a:active { color:#be0f05;text-decoration:none; }
+
+h4.epoTeaEvent { color:#425060;font-size:100%;padding:0;margin:0 }
+h4.epoTeaEvent a:link, h4.epoTeaEvent a:visited { color:#425060;text-decoration:underline;font-size:100%;}
+h4.epoTeaEvent a:hover, h4.epoTeaEvent a:focus, h4.epoTeaEvent a:active { color:#be0f05;text-decoration:none;font-size:100%;}
+
+a.epoTeaEvent:link,  a.epoTeaEvent:visited { font-weight:bold;display:block;color:#425060;text-decoration:underline;font-size:100%;}
+a.epoTeaEvent:hover, a.epoTeaEvent:focus, a.epoTeaEvent:active { font-weight:bold;display:block;color:#be0f05;text-decoration:none;font-size:100%;}

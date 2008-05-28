@@ -1,0 +1,156 @@
+/* ------------------------- */
+/*  Stand: 9. April 07 23:00 */
+/* ------------------------- */
+
+body { background-color:#fff;margin:1px;padding:0;font-size:75%;font-family:Arial,Helvetica,sans-serif;color:#425060; }
+
+/*************************** Headlines *******************************/
+h1,h2,h3,h4,h5,h6 { padding:0;margin:0;color:#425060}
+h1 { font-size:1.6em;border-bottom:1px solid #aaadb1;padding-bottom:2px;margin-top:27px;margin-bottom:16px; }
+h2 { font-size:1.25em;margin-top:25px;margin-bottom:9px; }
+h2.red { color:#be0f05; }
+h2 a,h2 a:visited { color:#be0f05;text-decoration:underline; }
+h2 a:hover,h2 a:focus,h2 a:active { text-decoration:none; }
+h3 { font-size:1.25em;margin-top:18px;margin-bottom:4px; }
+h4,h5{ font-size:1em;margin-top:9px; }
+/* Link Headline */
+h4 a,h5 a,h4 a:visited,h5 a:visited { font-weight:bold;text-decoration:underline; } 
+h4 a:hover,h5 a:hover,h4 a:focus,h5 a:focus,h4 a:active,h5 a:active { color:#be0f05;text-decoration:none; }
+h6 { font-size:.95em;margin-top:7px;margin-bottom:2px;font-weight:bold; }
+
+/*************************** Text *******************************/
+.abstract, .b { font-weight:bold; }
+.copy { color:#000; }
+.channel { color:#425060; }
+.caption { color:#000;font-size:0.95em; }
+.red { color:#be0f05; }
+.error { color:#f00; font-weight:bold; }
+abbr,acronym { border:none; }
+
+/*************************** Links *******************************/
+a,a:visited { color:#425060;text-decoration:underline; }
+a:hover,a:focus,a:active { color:#be0f05;text-decoration:none; }
+a.copy,a.copy:visited { color:#000;text-decoration:underline; }
+a.copy:hover,a.copy:focus,a.copy:active { color:#be0f05;text-decoration:none; }
+a.caption,a.caption:visited { color:#000;font-size:.95em;line-height:125%;text-decoration:underline; }
+a.caption:hover,a.caption:focus,a.caption:active { color:#be0f05;text-decoration:none; }
+
+.topofpage { margin-top:8px; }
+.topofpage a,a:active { color:#7f848b;font-size:.95em;margin-right:.5em;text-decoration:none; }
+.topofpage a:hover,a:focus,a:active { color:#be0f05;text-decoration:underline; }
+
+a.epoTeaEvent:link,  a.epoTeaEvent:visited { font-weight:bold;display:block;color:#425060;text-decoration:underline;font-size:100%;}
+a.epoTeaEvent:hover, a.epoTeaEvent:focus, a.epoTeaEvent:active { font-weight:bold;display:block;color:#be0f05;text-decoration:none;font-size:100%;}
+/*************************** Lists ***********************/
+
+ul.copy { margin:0;padding:0;list-style-type:none; margin-top:3px; }
+ul.copy li { color:#000;line-height:150%}
+ul.copy li a,ul.copy li a:visited { color:#000;text-decoration:underline;}
+ul.copy li a:hover,ul.copy li a:focus,ul.copy li a:active { color:#be0f05;text-decoration:none;}
+ul.bullet { margin:0;margin-left:1.25em;margin-top:8px;padding:0;list-style-type:square;color:#000;line-height:165%; }
+ul.bulletsub { margin:0;margin-left:1.3em;padding:0;list-style-type:square;color:#000;line-height:165%; }
+.list { margin:0;margin-left:1.3em;padding:0; }
+
+
+/*************************** Layer + Elements *******************************/
+.more,.topofpage { float:right;text-align:right; }
+.hide { display:none; }
+.clear { clear:both; }
+.space { margin:0 .5em; }
+.devider { margin-right:.5em; }
+.epoLine { padding:0;margin:15px 0 8px 0;color:#aaadb1;height:1px;border:none;border-top:solid 1px;clear:both; }
+
+/* Tables */
+table { border-collapse:collapse;width:100%; }
+/* PR 20070409 width entfernt */
+th { color:#0e2034;padding:3px 14px;border:solid 1px #425060;text-align:left; }
+td { color:#000;padding:3px 14px;border:solid 1px #425060;text-align:left; }
+
+tr.thbg { background:#c9cbce;color:#0e2034;font-weight:bold;text-align:left; }
+tr.tabbg {  background-color:#e4e6e7; }
+
+/* Images */
+img { border:0; } 
+img.copy { float:left;margin:3px 15px 5px 0; }
+img.arrowl { margin:0 3px 1px 8px;  }
+img.arrowr { margin:0 8px 1px 3px;  }
+
+div.imgcaption { float:left;width:48%; margin:9px 0 15px 0}
+div.imgcaption2 { float:left;width:50%; margin:0 15px 15px 0}
+img.captionBild { margin:0 0 5px 0;width:249px;display:block;padding: 1px 0 0 0; }
+div.captionCopy { float:left;margin:0; }
+
+/* Forms */
+form { padding:0;margin:0; }
+form label,input { font-size:100%; }
+label { line-height:150%; }
+select { font-size:.95em;width:12em; }
+input { width:12em; }
+input.go, input.teaGo { width:2.2em; }
+
+
+/**************************************************************************************************************/
+/******************************************** NAVIGATION ALL PAGES ***********************************/
+
+/* Meta Navigation */
+#epoHeader { position:relative;width:100%;height:82px;float:right; }
+#epoLogo { padding:0 15px 0 15px;margin:0;float:right;text-align:right; }
+
+#epoMetaNavContainer { display:none; }
+#epoMetaNav { display:none; }
+
+
+/* Channel Navigation */
+#epoChannelNav { display:none; }
+
+/* Index Navigation */
+#epoIndexNav { display:none; }
+
+/* Content Left Navigation  */
+#epoContentLeft { display:none; }
+#epoContentNav { display:none; } 
+
+ 
+/**************************************************************************************************************/
+/******************************************** CONTENT ALL PAGES ***********************************/
+
+#epoContent {  }
+#epoContentCenterRight { margin:0;padding:0; }
+
+/* Content Left  */
+#epoContentLeft { display:none;}
+
+/* Content Right */
+#epoContentRight { display:none; }
+
+#print { display:none; }
+.epoPrint { margin-bottom:15px }
+.epoPrintBold { font-weight:bold }
+
+#promo { display:none; }
+#promoImportantBlue { display:none; }
+#promoImportantRed { display:none; }
+#promoImportantGrey { display:none; }
+
+#epoContentRightBox { display:none; }
+
+/* Content Center */
+#epoContentCenter {margin-right:15px;margin-left:15px;padding:0;}
+
+/* Breadcrumbs */
+#epoBreadcrumbs { padding-top:7px;font-size:.95em;line-height:130%; }
+#epoBreadcrumbs span { padding:0;color:#7f848b; }
+#epoBreadcrumbs a,#epoBreadcrumbs a:visited { text-decoration:underline; }
+#epoBreadcrumbs a:hover,#epoBreadcrumbs a:focus,#epoBreadcrumbs a:active { text-decoration:none; }
+
+/* Footer */
+#epoFooter { text-align:center;padding:39px 0 15px 0;font-size:.95em; }
+#epoFooter a,#epoFooter a:visited { display:none; }
+#epoFooter a:hover,#epoFooterHome a:focus,#epoFooter a:active  { display:none; }
+
+/******************************************** CSS only for Homepage ***********************************/
+#epoChannelNavHome { display:none; }
+.epoHomeLine { padding:0;margin:15px 0 8px 0;color:#d4d6d8;height:1px;border:none;border-top:solid 1px;clear:both; }
+.updates {margin:0 0 10px 0;}
+.news {margin:0 15px 15px 15px; }
+.news img {margin-bottom:5px;float:left;margin-right:15px}
