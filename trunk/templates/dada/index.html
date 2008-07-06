@@ -9,22 +9,61 @@
 {% endblock %}
 
 {% block content %}
+	<h1>Items</h1>
 	{% if items %}
 		<table border=1 cellspacing=0 cellpadding=3>
-		<tr style:background-color:#000000;color:#ffffff;>
-			<th>an</th>
-			<th>pn</th>
-			<th>dpro</th>
-			<th>pa</th>
-			<th style=width:100%>ti</th>
-		</tr>
 		{% for item in items %}
 			<tr>
+				<td>{{ item.id }}</td>
 				<td>{{ item.title }}</td>
+				<td>{{ item.rating }}</td>
+				<td>{{ item.private }}</td>
+				<td>{{ item.user }}</td>
+				<td>{{ item.date }}</td>
 			</tr>
 		{% endfor %}
 		</table>
 	{% else %}
 		<p>No items are available.</p>
+	{% endif %}
+
+	<h1>Tasks</h1>
+	{% if tasks %}
+		<table border=1 cellspacing=0 cellpadding=3>
+		{% for task in tasks %}
+			<tr>
+				<td>{{ task.id }}</td>
+				<td>{{ task.title }}</td>
+				<td>{{ task.rating }}</td>
+				<td>{{ task.private }}</td>
+				<td>{{ task.user }}</td>
+				<td>{{ task.date }}</td>
+				<td>{{ task.done }}</td>
+				<td>{{ task.due }}</td>
+			</tr>
+		{% endfor %}
+		</table>
+	{% else %}
+		<p>No tasks are available.</p>
+	{% endif %}
+
+	<h1>Events</h1>
+	{% if events %}
+		<table border=1 cellspacing=0 cellpadding=3>
+		{% for event in events %}
+			<tr>
+				<td>{{ event.id }}</td>
+				<td>{{ event.title }}</td>
+				<td>{{ event.rating }}</td>
+				<td>{{ event.private }}</td>
+				<td>{{ event.user }}</td>
+				<td>{{ event.date }}</td>
+				<td>{{ event.start }}</td>
+				<td>{{ event.stop }}</td>
+			</tr>
+		{% endfor %}
+		</table>
+	{% else %}
+		<p>No events are available.</p>
 	{% endif %}
 {% endblock %}
