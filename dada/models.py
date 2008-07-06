@@ -1,83 +1,101 @@
-from django.db import models
-from django.contrib import admin
 from datetime import datetime
-
-#TODO: move admin stuff to admin.py, see below
+from django.db import models
+from django.contrib.auth.models import User
 
 
 class Item(models.Model):
-	title = models.CharField(max_length=128)
-#	children = models.ManyToManyField('self', related_name='parents')
-	parent = models.ForeignKey('self', related_name='children', null=True, blank=True)
-	rating = models.IntegerField()
-#	user_id = Field(Integer)
-#	user_id = models.CharField(max_length=128)
+	title = models.CharField(max_length=512)
+	rating = models.IntegerField(default = 3, null=True, blank=True)
+	private = models.BooleanField(default=False)	# TODO: share in groups?
+	user = models.ForeignKey(User, related_name='items')
 	date = models.DateField(auto_now=True)
 	
 	def __unicode__(self):
 		return self.title
 
+#	class Meta:
+#		abstract = True
 
-class Comment(models.Model):
+class HierarchicalItem(Item):
+#	children = models.ManyToManyField('self', related_name='parents')
+	parent = models.ForeignKey('self', related_name='children', null=True, blank=True)
+
+#	class Meta:
+#		abstract = True
+
+
+class Note(Item):
 	text = models.TextField(null=True, blank=True)
-	item = models.ForeignKey(Item, related_name='comments')
-	date = models.DateField(auto_now=True)
+	item = models.ForeignKey(Item, related_name='notes', null=True, blank=True)
+	
+	# TODO: __unicode__ seams not to work on TextField
+	def __str__(self):
+		return self.text
 
+
+class Link(Item):
+	url = models.URLField()
+	item = models.ForeignKey(Item, related_name='links', null=True, blank=True)
+	
 	def __unicode__(self):
-		return "%s: %s (%s)" % (self.item, self.text, self.date)
+		return self.url
 
 
+# TODO: requires PIL, http://www.pythonware.com/products/pil/
+#class Drawing(Item): # scribble
+#	image = models.ImageField(null=True, blank=True)
+#	item = models.ForeignKey(Item, related_name='drawings', null=True, blank=True)
+
+
+#TODO: use django-geo
+#http://code.google.com/p/django-geo/
+class Location(Item):
+	latitude = models.FloatField()
+	longitude = models.FloatField()
+	altitude = models.FloatField()
+	item = models.OneToOneField(Item, related_name='location')
+	
+	def __unicode__(self):
+		return "(lat: %f, long: %f, alt: %f)" % self.latitude, self.longitude, self.altitude
+
+
+##TODO: use django-tagging
+#http://code.google.com/p/django-tagging/
 class Tag(models.Model):
 	name = models.CharField(max_length=128)
 	items = models.ManyToManyField(Item, related_name='tags')
 	date = models.DateField(auto_now=True)
+#from tagging.fields import TagField
+# 
+#class Post(models.Model):
+#	....
+#	tags = TagField()
+# 
+##in your template. For example, object_details
+#{% load tagging_tags %}
+# 
+#{% tags_for_object object as tag_list %}
+#
+#{% if tag_list %}
+#	Tags:
+#		{% for tag in tag_list %}
+#		{{ tag }}{% if not forloop.last %}, {% endif %}
+#		{% endfor %}
+# {% endif %}
+##
 
-	def __unicode__(self):
-		return self.name
 
-
-class Task(Item):
+class Task(HierarchicalItem):
 	done = models.BooleanField()
-	due = models.DateField(null=True, blank=True)
+	due = models.DateTimeField(null=True, blank=True)
 #	repeat = ?
 
-	def __unicode__(self):
-		return self.title
+
+class Event(HierarchicalItem):
+	start = models.DateTimeField(verbose_name='from')
+	stop = models.DateTimeField(verbose_name='until')
 
 
-class Link(Item):
-	uri = models.CharField(max_length=1024)
-
-	def __unicode__(self):
-		return self.title
-
-
-# admin.py
-
-# A proposal convention:
-# Specifying all admin options in a file called admin.py, and import it in the __init__.py file
-# of your application module to do the registering during the initialization.
-
-class CommentInline(admin.StackedInline):
-	model = Comment
-	extra = 1
-
-
-class TagInline(admin.StackedInline):
-	model = Tag
-	extra = 1
-
-
-class ItemOptions(admin.ModelAdmin):
-	model = Item
-	inlines = [CommentInline]
-
-
-admin.site.register(Item, ItemOptions)
-admin.site.register(Comment)
-admin.site.register(Tag)
-admin.site.register(Task)
-admin.site.register(Link)
 
 
 #
@@ -125,3 +143,15 @@ admin.site.register(Link)
 #		return '<Item "%s">' % (self.title)
 ##		return str([v + ': ' + str(getattr(self, v, '-')) for v in vars(self)]) 
 #
+
+
+#class SimpleItem(models.Model):
+#	title = models.CharField(max_length=512)
+#
+#class SimpleTask(SimpleItem):
+#	done = models.BooleanField()
+#	due = models.DateTimeField(null=True, blank=True)
+#
+#class SimpleNote(SimpleItem):
+#	text = models.TextField(null=True, blank=True)
+#	item = models.ForeignKey(SimpleItem, related_name='notes', null=True, blank=True)
