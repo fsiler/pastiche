@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Item(models.Model):
 	title = models.CharField(max_length=512)
-	rating = models.IntegerField(default = 3, null=True, blank=True)
+	rating = models.IntegerField(default = 0, null=True, blank=True)
 	private = models.BooleanField(default=False)	# TODO: share in groups?
 	user = models.ForeignKey(User, related_name='items')
 	date = models.DateField(auto_now=True)

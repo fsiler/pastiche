@@ -10,9 +10,11 @@ def index(request):
 	items = Item.objects.all() #.order_by('-dpro')
 	tasks = Task.objects.all()
 	events = Event.objects.all()
+	notes = Note.objects.all()#filter(item=None)
+	links = Link.objects.all()#filter(item=None)
 
 	# simple
-	return render_to_response('dada/index.html', {'items': items, 'tasks': tasks, 'events':events})
+	return render_to_response('dada/index.html', {'items': items, 'tasks': tasks, 'events': events, 'notes': notes, 'links': links})
 
 	## complicated
 	#t = loader.get_template('dada/index.html')
