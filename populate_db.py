@@ -124,6 +124,12 @@ l4.url = 'http://pastiche.info'
 l4.item = t1
 l4.save()
 
+l5 = Link()
+l5.title = 'fifth link'
+l5.user = u1
+l5.url = 'http://pastiche.info'
+l5.save()
+
 n3 = Note()
 n3.title = 'third note'
 n3.user = u1
@@ -151,6 +157,19 @@ n6.user = u1
 n6.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
 n6.item = e4
 n6.save()
+
+n7 = Note()
+n7.title = 'seventh note'
+n7.user = u1
+n7.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
+n7.save()
+
+n8 = Note()
+n8.title = 'eighth note'
+n8.user = u1
+n8.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
+n8.item = l5
+n8.save()
 
 print 'db populated.'
 
