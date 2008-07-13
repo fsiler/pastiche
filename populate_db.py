@@ -5,21 +5,21 @@ import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'pastiche.settings'
 
 from datetime import datetime
-from dada.models import Event, Link, Location, Note, Tag, Task
+from dada.models import Item, HierarchicalItem, Event, Link, Location, Note, Tag, Task
 from django.contrib.auth.models import User
 
 def empty_table(table):
 	for o in table.objects.all():
 		o.delete()
 
-#empty_table(Item)
-#empty_table(HierarchicalItem)
-empty_table(Note)
-empty_table(Link)
-empty_table(Location)
-empty_table(Tag)
-#empty_table(Task) # TODO: probably need to delete according to hierarchy
-#empty_table(Event)	# TODO: same
+##empty_table(Item)
+##empty_table(HierarchicalItem)
+#empty_table(Note)
+#empty_table(Link)
+#empty_table(Location)
+#empty_table(Tag)
+##empty_table(Task) # TODO: probably need to delete according to hierarchy
+##empty_table(Event)	# TODO: same
 
 u1 = User.objects.get(username='andre')
 
@@ -170,6 +170,45 @@ n8.user = u1
 n8.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
 n8.item = l5
 n8.save()
+
+h1 = HierarchicalItem()
+h1.user = u1
+h1.title = 'Bookmarks'
+h1.save()
+
+l6 = Link()
+l6.title = 'first bookmark'
+l6.user = u1
+l6.url = 'http://pastiche.info'
+l6.item = h1
+l6.save()
+
+l7 = Link()
+l7.title = 'second bookmark'
+l7.user = u1
+l7.url = 'http://pastiche.info'
+l7.item = h1
+l7.save()
+
+h2 = HierarchicalItem()
+h2.user = u1
+h2.title = 'More Bookmarks'
+h2.parent = h1
+h2.save()
+
+l8 = Link()
+l8.title = 'third bookmark'
+l8.user = u1
+l8.url = 'http://pastiche.info'
+l8.item = h2
+l8.save()
+
+l9 = Link()
+l9.title = 'fourth bookmark'
+l9.user = u1
+l9.url = 'http://pastiche.info'
+l9.item = h2
+l9.save()
 
 print 'db populated.'
 

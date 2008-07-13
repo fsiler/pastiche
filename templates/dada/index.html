@@ -10,6 +10,115 @@
 
 {% block content %}
 	<h1>Items</h1>
+	<p>add item, add Hitem, add task, add event, add note, add link</p>
+	{% if items %}
+		<table border="0" cellpadding="3" cellspacing="0">
+			{% for item in items %}
+				<tr style="background-color: {% cycle '#EEEEEE' '#CCCCCC' %}">
+					<td style="align:right; white-space:nowrap">
+						{% ifequal item.rating -2 %}
+							<img src="/static/icons/thumb_down.png" border="0" style="vertical-align: middle" />
+							<img src="/static/icons/thumb_down.png" border="0" style="vertical-align: middle" />
+						{% endifequal %}
+						{% ifequal item.rating -1 %}
+							<img src="/static/icons/thumb_down.png" border="0" style="vertical-align: middle" />
+						{% endifequal %}
+						{% ifequal item.rating 0 %}
+						{% endifequal %}
+						{% ifequal item.rating 1 %}
+							<img src="/static/icons/thumb_up.png" border="0" style="vertical-align: middle" />
+						{% endifequal %}
+						{% ifequal item.rating 2 %}
+							<img src="/static/icons/thumb_up.png" border="0" style="vertical-align: middle" />
+							<img src="/static/icons/thumb_up.png" border="0" style="vertical-align: middle" />
+						{% endifequal %}
+					</td>
+					<td width="100%">
+						{% if item.hierarchicalitem %}
+							{% if item.hierarchicalitem.task %}
+								<img src="/static/icons/wrench.png" border="0" style="vertical-align: middle" />
+							{% else %}
+								{% if item.hierarchicalitem.event %}
+									<img src="/static/icons/date.png" border="0" style="vertical-align: middle" />
+								{% else %}
+									<img src="/static/icons/page_white_stack.png" border="0" style="vertical-align: middle" />
+								{% endif %}
+							{% endif %}
+						{% else %}
+							{% if item.note %}
+								<img src="/static/icons/note.png" border="0" style="vertical-align: middle" />
+							{% else %}
+								{% if item.link %}
+									<img src="/static/icons/link.png" border="0" style="vertical-align: middle" />
+								{% else %}
+									<img src="/static/icons/page_white.png" border="0" style="vertical-align: middle" />
+								{% endif %}
+							{% endif %}
+						{% endif %}
+
+						<b> {{ item.title }} </b>
+
+						{% if item.private %}
+							<img src="/static/icons/lock.png" alt="private" title="private" border="0" style="vertical-align: middle" />
+						{% comment %}{% else %}
+							<img src="/static/icons/lock_open.png" alt="public" title="public" border="0" style="vertical-align: middle" />
+						{% endcomment %}{% endif %}
+
+{% comment %}
+						{{ item.user }}
+						
+						{{ item.date }}
+{% endcomment %}
+						
+						{% if item.hierarchicalitem %}
+							{% if item.hierarchicalitem.task %}
+								{% if item.hierarchicalitem.task.done %}
+									<img src="/static/icons/tick.png" border="0" style="vertical-align: middle" />
+								{% endif %}
+								{% if item.hierarchicalitem.task.due %}
+									<img src="/static/icons/clock.png" border="0" style="vertical-align: middle" />
+									{{ item.hierarchicalitem.task.due }}
+								{% endif %}
+							{% else %}
+								{% if item.hierarchicalitem.event %}
+									<img src="/static/icons/clock.png" border="0" style="vertical-align: middle" />
+									{{ item.hierarchicalitem.event.start }} - {{ item.hierarchicalitem.event.stop }}
+								{% endif %}
+							{% endif %}
+						{% else %}
+							{% if item.note %}
+								{{ item.note.text }}
+							{% else %}
+								{% if item.link %}
+									{{ item.link.url }}
+								{% endif %}
+							{% endif %}
+						{% endif %}
+
+						{% for note in item.notes.all %}
+							<a href="/note/{{ note.id }}">
+								<img src="/static/icons/note.png" alt="{{ note.title }}" title="{{ note.title }}" border="0" style="vertical-align: middle" />
+							</a>
+						{% endfor %}
+						{% for link in item.links.all %}
+							<a href="/link/{{ link.id }}">
+								<img src="/static/icons/link.png" alt="{{ link.title }}" title="{{ link.title }}" border="0" style="vertical-align: middle" />
+							</a>
+						{% endfor %}
+						<img src="/static/icons/tag_blue.png" border="0" style="vertical-align: middle" />
+						<img src="/static/icons/world.png" border="0" style="vertical-align: middle" />
+					</td>
+					<td style="white-space:nowrap">
+						delete, add note, add link
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+		<p>No items are available.</p>
+	{% endif %}
+
+	private items: show <img src="/static/icons/key.png" border="0" style="vertical-align: middle" /> / hide <img src="/static/icons/key_delete.png" border="0" style="vertical-align: middle" />
 	{% if items %}
 		<table border=1 cellspacing=0 cellpadding=3>
 			<thead style="font-weight: bold">
@@ -26,14 +135,38 @@
 			<tbody>
 				{% for item in items %}
 					<tr>
-						<td>{{ item.id }}</td>
+						<td>{{ item.id }}
+							{% if item.hierarchicalitem %}
+								{% if item.hierarchicalitem.task %}
+									Task
+								{% else %}
+									{% if item.hierarchicalitem.event %}
+										Event
+									{% endif %}
+								{% endif %}
+							{% else %}
+								{% if item.note %}
+									Note
+								{% else %}
+									{% if item.link %}
+										Link
+									{% endif %}
+								{% endif %}
+							{% endif %}
+						</td>
 						<td>{{ item.title }}</td>
 						<td>
 							<img src="/static/icons/thumb_down.png" border="0" style="vertical-align: middle" />
 							{{ item.rating }}
 							<img src="/static/icons/thumb_up.png" border="0" style="vertical-align: middle" />
 						</td>
-						<td>{{ item.private }}</td>
+						<td>
+							{% if item.private %}
+								<img src="/static/icons/lock.png" alt="private" title="private" border="0" style="vertical-align: middle" />
+							{% comment %}{% else %}
+								<img src="/static/icons/lock_open.png" alt="public" title="public" border="0" style="vertical-align: middle" />
+							{% endcomment %}{% endif %}
+						</td>
 						<td>{{ item.user }}</td>
 						<td>{{ item.date }}</td>
 						<td>

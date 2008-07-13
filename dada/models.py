@@ -4,11 +4,12 @@ from django.contrib.auth.models import User
 
 
 class Item(models.Model):
+	created = models.DateTimeField(auto_now_add=True)
+	modified = models.DateTimeField(auto_now=True)
+	user = models.ForeignKey(User, related_name='items')
 	title = models.CharField(max_length=512)
 	rating = models.IntegerField(default = 0, null=True, blank=True)	# -2 <= rating <= 2
-	private = models.BooleanField(default=False)	# TODO: share in groups?
-	user = models.ForeignKey(User, related_name='items')
-	date = models.DateField(auto_now=True)
+	private = models.BooleanField(default=False) # TODO: share in groups?
 	
 	def __unicode__(self):
 		return self.title
@@ -18,7 +19,7 @@ class Item(models.Model):
 
 
 class HierarchicalItem(Item):
-#	children = models.ManyToManyField('self', related_name='parents')
+#	parents = models.ManyToManyField('self', related_name='children')
 	parent = models.ForeignKey('self', related_name='children', null=True, blank=True)
 
 #	class Meta:
@@ -26,20 +27,22 @@ class HierarchicalItem(Item):
 
 
 class Note(Item):
-	text = models.TextField(null=True, blank=True)
+	text = models.TextField(null=True, blank=True) #TODO: Rich Text
 	item = models.ForeignKey(Item, related_name='notes', null=True, blank=True)
 	
-	# TODO: __unicode__ seams not to work on TextField
-	def __str__(self):
-		return self.text
+	## TODO: __unicode__ seems not to work on TextField
+	#def __str__(self):
+	#	return self.text
 
 
 class Link(Item):
 	url = models.URLField()
 	item = models.ForeignKey(Item, related_name='links', null=True, blank=True)
+	#TODO: content = models.TextField(null=True, blank=True)
+	#TODO: thumbnail = models.ImageField(null=True, blank=True)
 	
-	def __unicode__(self):
-		return self.url
+	#def __unicode__(self):
+	#	return self.url
 
 
 # TODO: requires PIL, http://www.pythonware.com/products/pil/
@@ -87,7 +90,7 @@ class Tag(models.Model):
 
 
 class Task(HierarchicalItem):
-	done = models.BooleanField()
+	done = models.BooleanField(default=False)
 	due = models.DateTimeField(null=True, blank=True)
 #	repeat = ?
 
