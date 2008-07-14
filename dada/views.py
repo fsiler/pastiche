@@ -3,7 +3,7 @@ from django.template import Context, loader
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, get_object_or_404
 
-from pastiche.dada.models import Item, HierarchicalItem, Note, Link, Tag, Task, Event
+from pastiche.dada.models import Item, Node, Note, Link, Tag, Task, Event
 
 
 def index(request):

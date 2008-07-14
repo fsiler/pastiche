@@ -5,7 +5,7 @@
 # of your application module to do the registering during the initialization.
 
 from django.contrib import admin
-from pastiche.dada.models import Item, HierarchicalItem, Note, Link, Location, Tag, Task, Event
+from pastiche.dada.models import Item, Node, Note, Link, Location, Tag, Task, Event
 
 
 class NoteInline(admin.StackedInline):
@@ -34,7 +34,7 @@ class ItemOptions(admin.ModelAdmin):
 
 
 admin.site.register(Item, ItemOptions)
-admin.site.register(HierarchicalItem)
+admin.site.register(Node)
 admin.site.register(Note)
 admin.site.register(Link)
 admin.site.register(Location)

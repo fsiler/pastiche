@@ -10,7 +10,7 @@
 
 {% block content %}
 	<h1>Items</h1>
-	<p>add item, add Hitem, add task, add event, add note, add link</p>
+	<p>add item, add node, add task, add event, add note, add link</p>
 	{% if items %}
 		<table border="0" cellpadding="3" cellspacing="0">
 			{% for item in items %}
@@ -34,14 +34,14 @@
 						{% endifequal %}
 					</td>
 					<td width="100%">
-						{% if item.hierarchicalitem %}
-							{% if item.hierarchicalitem.task %}
+						{% if item.node %}
+							{% if item.node.task %}
 								<img src="/static/icons/wrench.png" border="0" style="vertical-align: middle" />
 							{% else %}
-								{% if item.hierarchicalitem.event %}
+								{% if item.node.event %}
 									<img src="/static/icons/date.png" border="0" style="vertical-align: middle" />
 								{% else %}
-									<img src="/static/icons/page_white_stack.png" border="0" style="vertical-align: middle" />
+									<img src="/static/icons/sitemap.png" border="0" style="vertical-align: middle" />
 								{% endif %}
 							{% endif %}
 						{% else %}
@@ -70,19 +70,19 @@
 						{{ item.date }}
 {% endcomment %}
 						
-						{% if item.hierarchicalitem %}
-							{% if item.hierarchicalitem.task %}
-								{% if item.hierarchicalitem.task.done %}
+						{% if item.node %}
+							{% if item.node.task %}
+								{% if item.node.task.done %}
 									<img src="/static/icons/tick.png" border="0" style="vertical-align: middle" />
 								{% endif %}
-								{% if item.hierarchicalitem.task.due %}
+								{% if item.node.task.due %}
 									<img src="/static/icons/clock.png" border="0" style="vertical-align: middle" />
-									{{ item.hierarchicalitem.task.due }}
+									{{ item.node.task.due }}
 								{% endif %}
 							{% else %}
-								{% if item.hierarchicalitem.event %}
+								{% if item.node.event %}
 									<img src="/static/icons/clock.png" border="0" style="vertical-align: middle" />
-									{{ item.hierarchicalitem.event.start }} - {{ item.hierarchicalitem.event.stop }}
+									{{ item.node.event.start }} - {{ item.node.event.stop }}
 								{% endif %}
 							{% endif %}
 						{% else %}
@@ -136,11 +136,11 @@
 				{% for item in items %}
 					<tr>
 						<td>{{ item.id }}
-							{% if item.hierarchicalitem %}
-								{% if item.hierarchicalitem.task %}
+							{% if item.node %}
+								{% if item.node.task %}
 									Task
 								{% else %}
-									{% if item.hierarchicalitem.event %}
+									{% if item.node.event %}
 										Event
 									{% endif %}
 								{% endif %}
