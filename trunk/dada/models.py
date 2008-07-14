@@ -18,7 +18,7 @@ class Item(models.Model):
 #		abstract = True
 
 
-class HierarchicalItem(Item):
+class Node(Item):
 #	parents = models.ManyToManyField('self', related_name='children')
 	parent = models.ForeignKey('self', related_name='children', null=True, blank=True)
 
@@ -89,13 +89,13 @@ class Tag(models.Model):
 ##
 
 
-class Task(HierarchicalItem):
+class Task(Node):
 	done = models.BooleanField(default=False)
 	due = models.DateTimeField(null=True, blank=True)
 #	repeat = ?
 
 
-class Event(HierarchicalItem):
+class Event(Node):
 	start = models.DateTimeField(verbose_name='from')
 	stop = models.DateTimeField(verbose_name='until')
 
