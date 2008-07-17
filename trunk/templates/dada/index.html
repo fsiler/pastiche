@@ -10,11 +10,28 @@
 
 {% load pagination_tags %}
 {% load recurse %}
+{% load switch %}
 
 {% block content %}
+	
+	<b>switch test</b>
+	{% for item in topitems %}
+		{% switch item.title %}
+			{% case 'first task' %}
+				<p>1st task</p>
+			{% endcase %}
+			{% case 'second event' %}
+				<p>2nd event</p>
+			{% endcase %}            
+		{% default %}
+			<p>Oh my God! I have no name!</p>
+		{% endswitch %}
+	{% endfor %}
+
+
 	<h1>Recursive Items</h1>
 		
-		{% recurse topitems.children with topitems as item %}
+		{% recurse item.children.all with topitems as item %}
 		<ul>
 			{% loop %}
 			<li>
