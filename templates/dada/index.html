@@ -8,11 +8,31 @@
 	pastiche
 {% endblock %}
 
+{% load pagination_tags %}
+{% load recurse %}
+
 {% block content %}
-	<h1>Items</h1>
+	<h1>Recursive Items</h1>
+		{% for item in topitems %}
+			<p>{{ item.title }} {{ item.children.all|length }}</p>
+		{% endfor %}
+		{% recurse topitems.children.all with topitems as item %}
+		<ul>
+			{% loop %}
+			<li>
+				{{ level }} {{ item.title }} {{ item.children.all|length }}
+				{% child %}
+			</li>
+			{% endloop %}
+		</ul>
+		{% endrecurse %}
+	
+	<h1>Paginated Items</h1>
 	<p>add item, add node, add task, add event, add note, add link</p>
 	{% if items %}
 		<table border="0" cellpadding="3" cellspacing="0">
+			{% autopaginate items 12 %}
+			<center>{% paginate %}</center>
 			{% for item in items %}
 				<tr style="background-color: {% cycle '#EEEEEE' '#CCCCCC' %}">
 					<td style="align:right; white-space:nowrap">
@@ -94,7 +114,7 @@
 								{% endif %}
 							{% endif %}
 						{% endif %}
-
+						
 						{% for note in item.notes.all %}
 							<a href="/note/{{ note.id }}">
 								<img src="/static/icons/note.png" alt="{{ note.title }}" title="{{ note.title }}" border="0" style="vertical-align: middle" />
@@ -118,7 +138,8 @@
 		<p>No items are available.</p>
 	{% endif %}
 
-	private items: show <img src="/static/icons/key.png" border="0" style="vertical-align: middle" /> / hide <img src="/static/icons/key_delete.png" border="0" style="vertical-align: middle" />
+	<h1>Items</h1>
+	<p>private items: show <img src="/static/icons/key.png" border="0" style="vertical-align: middle" /> / hide <img src="/static/icons/key_delete.png" border="0" style="vertical-align: middle" /></p>
 	{% if items %}
 		<table border=1 cellspacing=0 cellpadding=3>
 			<thead style="font-weight: bold">
