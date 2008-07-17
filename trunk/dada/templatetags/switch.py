@@ -18,6 +18,9 @@
 # Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 # Boston, MA 02111-1307, USA.
 
+# http://www.djangosnippets.org/snippets/878/
+
+
 import md5
 # Deprecated since release 2.5. Use the hashlib module instead.
 # http://www.python.org/doc/current/lib/module-md5.html

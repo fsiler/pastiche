@@ -14,8 +14,10 @@
 # GNU Lesser General Public License for more details.
 ###############################################################################
 
-from django import template
+# http://www.undefinedfire.com/articles/recursion-in-django-templates/
 
+
+from django import template
 register = template.Library()
 
 class RecurseNode(template.Node):
@@ -61,6 +63,7 @@ class RecurseNode(template.Node):
         output = self.renderCallback(context, vals, 1)
         return output
 
+@register.tag(name='recurse')
 def do_recurse(parser, token):
     bits = list(token.split_contents())
     if len(bits) != 6 and bits[2] != 'with' and bits[4] != 'as':
@@ -79,4 +82,4 @@ def do_recurse(parser, token):
             break
 
     return RecurseNode(var, name, child, nodeList)
-do_recurse = register.tag('recurse', do_recurse)
+#do_recurse = register.tag('recurse', do_recurse)
