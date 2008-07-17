@@ -7,9 +7,9 @@ from pastiche.dada.models import Item, Node, Note, Link, Tag, Task, Event
 
 
 def index(request):
-	topitems = Node.objects.filter(parent=None) #.order_by('-dpro')
+	topitems = Node.objects.filter(parent=None)
 	#print topitems
-	items = Item.objects.all() #.order_by('-dpro')
+	items = Item.objects.all()
 	tasks = Task.objects.all()
 	events = Event.objects.all()
 	notes = Note.objects.all()#filter(item=None)
