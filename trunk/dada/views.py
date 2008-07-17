@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import Context, loader
+from django.template import Context, loader, RequestContext
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, get_object_or_404
 
@@ -7,6 +7,8 @@ from pastiche.dada.models import Item, Node, Note, Link, Tag, Task, Event
 
 
 def index(request):
+	topitems = Node.objects.filter(parent=None) #.order_by('-dpro')
+	#print topitems
 	items = Item.objects.all() #.order_by('-dpro')
 	tasks = Task.objects.all()
 	events = Event.objects.all()
@@ -14,7 +16,7 @@ def index(request):
 	links = Link.objects.all()#filter(item=None)
 
 	# simple
-	return render_to_response('dada/index.html', {'items': items, 'tasks': tasks, 'events': events, 'notes': notes, 'links': links})
+	return render_to_response('dada/index.html', {'topitems': topitems, 'items': items, 'tasks': tasks, 'events': events, 'notes': notes, 'links': links}, context_instance=RequestContext(request))
 
 	## complicated
 	#t = loader.get_template('dada/index.html')
