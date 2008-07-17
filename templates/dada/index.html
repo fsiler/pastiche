@@ -13,10 +13,8 @@
 
 {% block content %}
 	<h1>Recursive Items</h1>
-		{% for item in topitems %}
-			<p>{{ item.title }} {{ item.children.all|length }}</p>
-		{% endfor %}
-		{% recurse topitems.children.all with topitems as item %}
+		
+		{% recurse topitems.children with topitems as item %}
 		<ul>
 			{% loop %}
 			<li>
