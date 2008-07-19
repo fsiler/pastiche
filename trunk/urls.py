@@ -2,6 +2,8 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 from pastiche import settings
 
+admin.autodiscover()
+
 urlpatterns = patterns('pastiche.dada.views',
 	(r'^dada[/]$', 'index'), # [/] for optional trailing /
 	(r'^dada/(?P<item>\d+)[/]$', 'detail'),
