@@ -1,49 +1,33 @@
 {% extends "dada/base.html" %}
 
+{% load recurse %}
+{% load pagination_tags %}
+
 {% block title %}
 	pastiche
 {% endblock %}
 
-{% block header %}
+{% block heading %}
 	pastiche
 {% endblock %}
 
-{% load pagination_tags %}
-{% load recurse %}
-{% load switch %}
-
 {% block content %}
-	
-	<b>switch test</b>
-	{% for item in topitems %}
-		{% switch item.title %}
-			{% case 'first task' %}
-				<p>1st task</p>
-			{% endcase %}
-			{% case 'second event' %}
-				<p>2nd event</p>
-			{% endcase %}            
-		{% default %}
-			<p>Oh my God! I have no name!</p>
-		{% endswitch %}
-	{% endfor %}
 
+	<p>add item, add node, add task, add event, add note, add link</p>
 
-	<h1>Recursive Items</h1>
+	<h1>recent items</h1>
 		
-		{% recurse item.children.all with topitems as item %}
+		{% recurse item.children.all with top_items as item %}
 		<ul>
 			{% loop %}
 			<li>
-				{{ level }} {{ item.title }} {{ item.children.all|length }}
+				{{ level }} {{ item.title }} {{ item.children.count }}
 				{% child %}
 			</li>
 			{% endloop %}
 		</ul>
 		{% endrecurse %}
 	
-	<h1>Paginated Items</h1>
-	<p>add item, add node, add task, add event, add note, add link</p>
 	{% if items %}
 		<table border="0" cellpadding="3" cellspacing="0">
 			{% autopaginate items 12 %}

@@ -7,8 +7,8 @@ from pastiche.dada.models import Item, Node, Note, Link, Tag, Task, Event
 
 
 def index(request):
-	topitems = Node.objects.filter(parent=None)
-	#print topitems
+	top_items = Node.objects.filter(parent=None)
+	#print top_items
 	items = Item.objects.all()
 	tasks = Task.objects.all()
 	events = Event.objects.all()
@@ -16,7 +16,7 @@ def index(request):
 	links = Link.objects.all()#filter(item=None)
 
 	# simple
-	return render_to_response('dada/index.html', {'topitems': topitems, 'items': items, 'tasks': tasks, 'events': events, 'notes': notes, 'links': links}, context_instance=RequestContext(request))
+	return render_to_response('dada/index.html', {'top_items': top_items, 'items': items, 'tasks': tasks, 'events': events, 'notes': notes, 'links': links}, context_instance=RequestContext(request))
 
 	## complicated
 	#t = loader.get_template('dada/index.html')

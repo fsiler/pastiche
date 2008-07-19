@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 
-# A proposal convention:
-# Specifying all admin options in a file called admin.py, and import it in the __init__.py file
-# of your application module to do the registering during the initialization.
-
 from django.contrib import admin
 from pastiche.dada.models import Item, Node, Note, Link, Location, Tag, Task, Event
 
