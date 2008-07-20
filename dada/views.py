@@ -3,12 +3,12 @@ from django.template import Context, loader, RequestContext
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, get_object_or_404
 
-from pastiche.dada.models import Item, Node, Note, Link, Tag, Task, Event
+from pastiche.dada.models import Item, Note, Link, Task, Event
 
 
 def index(request):
-	top_items = Node.objects.filter(parent=None)
-	#print top_items
+	top_items = Item.objects.filter(parent=None)
+#	top_items = Item.objects.filter(dependent=False)
 	items = Item.objects.all()
 	tasks = Task.objects.all()
 	events = Event.objects.all()

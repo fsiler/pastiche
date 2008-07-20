@@ -10,20 +10,27 @@ class Item(models.Model):
 	title = models.CharField(max_length=512)
 	rating = models.IntegerField(default = 0, null=True, blank=True)	# -2 <= rating <= 2
 	private = models.BooleanField(default=False) # TODO: share in groups?
+	parent = models.ForeignKey('self', related_name='children', null=True, blank=True)
 	
 	def __unicode__(self):
 		return self.title
+	
+	def dependent(self):
+		if self.parent is None:
+			return False
+		else:
+			return True
 
 #	class Meta:
 #		abstract = True
 
 
-class Node(Item):
-#	parents = models.ManyToManyField('self', related_name='children')
-	parent = models.ForeignKey('self', related_name='children', null=True, blank=True)
-
-#	class Meta:
-#		abstract = True
+#class Node(Item):
+##	parents = models.ManyToManyField('self', related_name='children')
+#	parent = models.ForeignKey('self', related_name='children', null=True, blank=True)
+#
+##	class Meta:
+##		abstract = True
 
 
 class Note(Item):
@@ -34,6 +41,12 @@ class Note(Item):
 	#def __str__(self):
 	#	return self.text
 
+	def dependent(self):
+		if (self.parent is None) and (self.item is None):
+			return False
+		else:
+			return True
+
 
 class Link(Item):
 	url = models.URLField()
@@ -43,6 +56,12 @@ class Link(Item):
 	
 	#def __unicode__(self):
 	#	return self.url
+
+	def dependent(self):
+		if (self.parent is None) and (self.item is None):
+			return False
+		else:
+			return True
 
 
 # TODO: requires PIL, http://www.pythonware.com/products/pil/
@@ -89,13 +108,13 @@ class Tag(models.Model):
 ##
 
 
-class Task(Node):
+class Task(Item):
 	done = models.BooleanField(default=False)
 	due = models.DateTimeField(null=True, blank=True)
 #	repeat = ?
 
 
-class Event(Node):
+class Event(Item):
 	start = models.DateTimeField(verbose_name='from')
 	stop = models.DateTimeField(verbose_name='until')
 

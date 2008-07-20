@@ -6,7 +6,14 @@ admin.autodiscover()
 
 urlpatterns = patterns('pastiche.dada.views',
 	(r'^dada[/]$', 'index'), # [/] for optional trailing /
-	(r'^dada/(?P<item>\d+)[/]$', 'detail'),
+	(r'^dada/(?P<item>\d+)[/]$', 'item'),
+	(r'^dada/(?P<note>\d+)[/]$', 'note'),
+	(r'^dada/(?P<link>\d+)[/]$', 'link'),
+	(r'^dada/(?P<tag>\d+)[/]$', 'tag'),
+	(r'^dada/(?P<location>\d+)[/]$', 'location'),
+	(r'^dada/(?P<node>\d+)[/]$', 'node'),
+	(r'^dada/(?P<task>\d+)[/]$', 'task'),
+	(r'^dada/(?P<event>\d+)[/]$', 'event'),
 )
 
 urlpatterns += patterns('',
