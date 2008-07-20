@@ -1,7 +1,6 @@
 {% extends "dada/base.html" %}
 
 {% load recurse %}
-{% load pagination_tags %}
 
 {% block title %}
 	pastiche
@@ -30,8 +29,6 @@
 	
 	{% if items %}
 		<table border="0" cellpadding="3" cellspacing="0">
-			{% autopaginate items 12 %}
-			<center>{% paginate %}</center>
 			{% for item in items %}
 				<tr style="background-color: {% cycle '#EEEEEE' '#CCCCCC' %}">
 					<td style="align:right; white-space:nowrap">
