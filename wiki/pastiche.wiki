@@ -119,8 +119,8 @@ tbd. [http://pastiche.info pastiche.info]
  * p2p vs. server-based
  * mobility, ad-hoc networks, Pyro or Web Services???
  * leasing of AMS registration
- * [http://karrigell.sourceforge.net/ karrigell]
- * [http://pyjamas.pyworks.org/ pyjamas]
+ * [http://djangoproject/ django]
+ * [http://dojotoolkit.org/ dojo]
  * [http://rdflib.net/ rdflib]
 
 http://pastiche.googlecode.com/files/python-logo.gif
