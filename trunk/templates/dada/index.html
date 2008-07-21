@@ -12,130 +12,131 @@
 
 {% block content %}
 
-	<p>add item, add node, add task, add event, add note, add link</p>
+	<p>
+		<img alt="add item" title="add item" src="/static/icons/page_white_add.png" />
+		<img alt="add task" title="add task" src="/static/icons/cog_add.png" />
+		<img alt="add event" title="add event" src="/static/icons/calendar_add.png" />
+		<img alt="add note" title="add note" src="/static/icons/note_add.png" />
+		<img alt="add link" title="add link" src="/static/icons/link_add.png" />
+	</p>
 
+	<p>private items: show <img src="/static/icons/key.png" border="0" style="vertical-align: middle" /> / hide <img src="/static/icons/key_delete.png" border="0" style="vertical-align: middle" /></p>
+
+	{% if items %}
 	<h1>recent items</h1>
 		
 		{% recurse item.children.all with top_items as item %}
 		<ul>
 			{% loop %}
-			<li>
-				{{ level }} {{ item.title }} {{ item.children.count }}
+			<li style="background-color: {% cycle '#eeeeee' '#dddddd' '#cccccc' '#dddddd' %}; list-style-type: none">
+				{% comment %} TODO: use list-style-marker for type icons {% endcomment %}
+				{% comment %} {{ level }} {{ item.title }} {{ item.children.count }} {% endcomment %}
+				<a href="type" style="text-decoration: none">
+					{% ifequal item.rating -2 %}
+						<img src="/static/icons/thumb_down.png" />
+						<img src="/static/icons/thumb_down.png" />
+					{% endifequal %}
+					{% ifequal item.rating -1 %}
+						<img src="/static/icons/thumb_down.png" />
+					{% endifequal %}
+					{% ifequal item.rating 0 %}
+					{% endifequal %}
+					{% ifequal item.rating 1 %}
+						<img src="/static/icons/thumb_up.png" />
+					{% endifequal %}
+					{% ifequal item.rating 2 %}
+						<img src="/static/icons/thumb_up.png" />
+						<img src="/static/icons/thumb_up.png" />
+					{% endifequal %}
+					
+					{% if item.task %}
+						<img src="/static/icons/cog.png" />
+					{% else %}
+						{% if item.event %}
+							<img src="/static/icons/calendar.png" />
+						{% else %}
+							{% if item.note %}
+								<img src="/static/icons/note.png" />
+							{% else %}
+								{% if item.link %}
+									<img src="/static/icons/link.png" />
+								{% else %}
+									<img src="/static/icons/page_white.png" />
+								{% endif %}
+							{% endif %}
+						{% endif %}
+					{% endif %}
+					
+					<b> {{ item.title }} </b>
+
+					{% if item.private %}
+						<img src="/static/icons/lock.png" alt="private" title="private" />
+					{% comment %}{% else %}
+						<img src="/static/icons/lock_open.png" alt="public" title="public" />
+					{% endcomment %}{% endif %}
+
+{% comment %}
+					{{ item.user }}
+					
+					{{ item.date }}
+{% endcomment %}
+					
+						{% if item.task %}
+							{% if item.task.done %}
+								<img src="/static/icons/tick.png" />
+							{% endif %}
+							{% if item.task.due %}
+								<img src="/static/icons/clock.png" />
+								{{ item.task.due }}
+							{% endif %}
+						{% else %}
+							{% if item.event %}
+								<img src="/static/icons/clock.png" />
+								{{ item.event.start }} - {{ item.event.stop }}
+							{% else %}
+								{% if item.note %}
+									{{ item.note.text }}
+								{% else %}
+									{% if item.link %}
+										{{ item.link.url }}
+									{% endif %}
+								{% endif %}
+							{% endif %}
+						{% endif %}
+					</a>
+
+						
+					{% for note in item.notes.all %}
+						<a href="/note/{{ note.id }}">
+							<img src="/static/icons/note.png" alt="{{ note.title }}" title="{{ note.title }}" />
+						</a>
+					{% endfor %}
+					{% for link in item.links.all %}
+						<a href="/link/{{ link.id }}">
+							<img src="/static/icons/link.png" alt="{{ link.title }}" title="{{ link.title }}" />
+						</a>
+					{% endfor %}
+					<img src="/static/icons/tag_blue.png" />
+					<img src="/static/icons/world.png" />
+					
+					<span style="font-style: oblique">
+						<img alt="delete" title="delete" src="/static/icons/delete.png" />
+						<img alt="add note" title="add note" src="/static/icons/note_add.png" />
+						<img alt="add link" title="add link" src="/static/icons/link_add.png" />
+					</span>
+					
 				{% child %}
 			</li>
 			{% endloop %}
 		</ul>
 		{% endrecurse %}
-	
-	{% if items %}
-		<table border="0" cellpadding="3" cellspacing="0">
-			{% for item in items %}
-				<tr style="background-color: {% cycle '#EEEEEE' '#CCCCCC' %}">
-					<td style="align:right; white-space:nowrap">
-						{% ifequal item.rating -2 %}
-							<img src="/static/icons/thumb_down.png" border="0" style="vertical-align: middle" />
-							<img src="/static/icons/thumb_down.png" border="0" style="vertical-align: middle" />
-						{% endifequal %}
-						{% ifequal item.rating -1 %}
-							<img src="/static/icons/thumb_down.png" border="0" style="vertical-align: middle" />
-						{% endifequal %}
-						{% ifequal item.rating 0 %}
-						{% endifequal %}
-						{% ifequal item.rating 1 %}
-							<img src="/static/icons/thumb_up.png" border="0" style="vertical-align: middle" />
-						{% endifequal %}
-						{% ifequal item.rating 2 %}
-							<img src="/static/icons/thumb_up.png" border="0" style="vertical-align: middle" />
-							<img src="/static/icons/thumb_up.png" border="0" style="vertical-align: middle" />
-						{% endifequal %}
-					</td>
-					<td width="100%">
-						{% if item.node %}
-							{% if item.node.task %}
-								<img src="/static/icons/wrench.png" border="0" style="vertical-align: middle" />
-							{% else %}
-								{% if item.node.event %}
-									<img src="/static/icons/date.png" border="0" style="vertical-align: middle" />
-								{% else %}
-									<img src="/static/icons/sitemap.png" border="0" style="vertical-align: middle" />
-								{% endif %}
-							{% endif %}
-						{% else %}
-							{% if item.note %}
-								<img src="/static/icons/note.png" border="0" style="vertical-align: middle" />
-							{% else %}
-								{% if item.link %}
-									<img src="/static/icons/link.png" border="0" style="vertical-align: middle" />
-								{% else %}
-									<img src="/static/icons/page_white.png" border="0" style="vertical-align: middle" />
-								{% endif %}
-							{% endif %}
-						{% endif %}
 
-						<b> {{ item.title }} </b>
 
-						{% if item.private %}
-							<img src="/static/icons/lock.png" alt="private" title="private" border="0" style="vertical-align: middle" />
-						{% comment %}{% else %}
-							<img src="/static/icons/lock_open.png" alt="public" title="public" border="0" style="vertical-align: middle" />
-						{% endcomment %}{% endif %}
-
-{% comment %}
-						{{ item.user }}
-						
-						{{ item.date }}
-{% endcomment %}
-						
-						{% if item.node %}
-							{% if item.node.task %}
-								{% if item.node.task.done %}
-									<img src="/static/icons/tick.png" border="0" style="vertical-align: middle" />
-								{% endif %}
-								{% if item.node.task.due %}
-									<img src="/static/icons/clock.png" border="0" style="vertical-align: middle" />
-									{{ item.node.task.due }}
-								{% endif %}
-							{% else %}
-								{% if item.node.event %}
-									<img src="/static/icons/clock.png" border="0" style="vertical-align: middle" />
-									{{ item.node.event.start }} - {{ item.node.event.stop }}
-								{% endif %}
-							{% endif %}
-						{% else %}
-							{% if item.note %}
-								{{ item.note.text }}
-							{% else %}
-								{% if item.link %}
-									{{ item.link.url }}
-								{% endif %}
-							{% endif %}
-						{% endif %}
-						
-						{% for note in item.notes.all %}
-							<a href="/note/{{ note.id }}">
-								<img src="/static/icons/note.png" alt="{{ note.title }}" title="{{ note.title }}" border="0" style="vertical-align: middle" />
-							</a>
-						{% endfor %}
-						{% for link in item.links.all %}
-							<a href="/link/{{ link.id }}">
-								<img src="/static/icons/link.png" alt="{{ link.title }}" title="{{ link.title }}" border="0" style="vertical-align: middle" />
-							</a>
-						{% endfor %}
-						<img src="/static/icons/tag_blue.png" border="0" style="vertical-align: middle" />
-						<img src="/static/icons/world.png" border="0" style="vertical-align: middle" />
-					</td>
-					<td style="white-space:nowrap">
-						delete, add note, add link
-					</td>
-				</tr>
-			{% endfor %}
-		</table>
 	{% else %}
 		<p>No items are available.</p>
 	{% endif %}
 
 	<h1>Items</h1>
-	<p>private items: show <img src="/static/icons/key.png" border="0" style="vertical-align: middle" /> / hide <img src="/static/icons/key_delete.png" border="0" style="vertical-align: middle" /></p>
 	{% if items %}
 		<table border=1 cellspacing=0 cellpadding=3>
 			<thead style="font-weight: bold">
@@ -154,10 +155,10 @@
 					<tr>
 						<td>{{ item.id }}
 							{% if item.node %}
-								{% if item.node.task %}
+								{% if item.task %}
 									Task
 								{% else %}
-									{% if item.node.event %}
+									{% if item.event %}
 										Event
 									{% endif %}
 								{% endif %}
@@ -214,199 +215,5 @@
 		</table>
 	{% else %}
 		<p>No items are available.</p>
-	{% endif %}
-
-	<h1>Tasks</h1>
-	{% if tasks %}
-		<table border=1 cellspacing=0 cellpadding=3>
-			<thead style="font-weight: bold">
-				<td>id</td>
-				<td>title</td>
-				<td>rating</td>
-				<td>private</td>
-				<td>user</td>
-				<td>date</td>
-				<td>done</td>
-				<td>due</td>
-				<td>notes</td>
-				<td>links</td>
-				<td>children</td>
-			</thead style="font-weight: bold">
-			<tbody>
-				{% for task in tasks %}
-					<tr>
-						<td>{{ task.id }}</td>
-						<td>{{ task.title }}</td>
-						<td>{{ task.rating }}</td>
-						<td>{{ task.private }}</td>
-						<td>{{ task.user }}</td>
-						<td>{{ task.date }}</td>
-						<td>{{ task.done }}</td>
-						<td>{{ task.due }}</td>
-						<td>
-							{% if task.notes %}
-								{{ task.notes.all|length }}
-							{% endif %}
-						</td>
-						<td>
-							{% if task.links %}
-								{{ task.links.all|length }}
-							{% endif %}
-						</td>
-						<td>
-								{{ task.children.all|length }}
-						</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-	{% else %}
-		<p>No tasks are available.</p>
-	{% endif %}
-
-	<h1>Events</h1>
-	{% if events %}
-		<table border=1 cellspacing=0 cellpadding=3>
-			<thead style="font-weight: bold">
-				<td>id</td>
-				<td>title</td>
-				<td>rating</td>
-				<td>private</td>
-				<td>user</td>
-				<td>date</td>
-				<td>start</td>
-				<td>stop</td>
-				<td>notes</td>
-				<td>links</td>
-				<td>children</td>
-			</thead style="font-weight: bold">
-			<tbody>
-				{% for event in events %}
-					<tr>
-						<td>{{ event.id }}</td>
-						<td>{{ event.title }}</td>
-						<td>{{ event.rating }}</td>
-						<td>{{ event.private }}</td>
-						<td>{{ event.user }}</td>
-						<td>{{ event.date }}</td>
-						<td>{{ event.start }}</td>
-						<td>{{ event.stop }}</td>
-						<td>
-							{% if event.notes %}
-								{{ event.notes.all|length }}
-							{% endif %}
-						</td>
-						<td>
-							{% if event.links %}
-								{{ event.links.all|length }}
-							{% endif %}
-						</td>
-						<td>
-							{% if event.children %}
-								{{ event.children.all|length }}
-							{% endif %}
-						</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-	{% else %}
-		<p>No events are available.</p>
-	{% endif %}
-
-	<h1>Notes</h1>
-	{% if notes %}
-		<table border=1 cellspacing=0 cellpadding=3>
-			<thead style="font-weight: bold">
-				<td>id</td>
-				<td>title</td>
-				<td>rating</td>
-				<td>private</td>
-				<td>user</td>
-				<td>date</td>
-				<td>text</td>
-				<td>notes</td>
-				<td>links</td>
-				<td>item</td>
-			</thead style="font-weight: bold">
-			<tbody>
-				{% for note in notes %}
-					<tr>
-						<td>{{ note.id }}</td>
-						<td>{{ note.title }}</td>
-						<td>{{ note.rating }}</td>
-						<td>{{ note.private }}</td>
-						<td>{{ note.user }}</td>
-						<td>{{ note.date }}</td>
-						<td>{{ note.text }}</td>
-						<td>
-							{% if note.notes %}
-								{{ note.notes.all|length }}
-							{% endif %}
-						</td>
-						<td>
-							{% if note.links %}
-								{{ note.links.all|length }}
-							{% endif %}
-						</td>
-						<td>
-							{% if note.item %}
-								{{ note.item.id }}
-							{% endif %}
-						</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-	{% else %}
-		<p>No notes are available.</p>
-	{% endif %}
-
-	<h1>Links</h1>
-	{% if links %}
-		<table border=1 cellspacing=0 cellpadding=3>
-			<thead style="font-weight: bold">
-				<td>id</td>
-				<td>title</td>
-				<td>rating</td>
-				<td>private</td>
-				<td>user</td>
-				<td>date</td>
-				<td>url</td>
-				<td>notes</td>
-				<td>links</td>
-				<td>item</td>
-			</thead style="font-weight: bold">
-			<tbody>
-				{% for link in links %}
-					<tr>
-						<td>{{ link.id }}</td>
-						<td>{{ link.title }}</td>
-						<td>{{ link.rating }}</td>
-						<td>{{ link.private }}</td>
-						<td>{{ link.user }}</td>
-						<td>{{ link.date }}</td>
-						<td>{{ link.url }}</td>
-						<td>
-							{% if link.links %}
-								{{ link.links.all|length }}
-							{% endif %}
-						</td>
-						<td>
-							{% if link.links %}
-								{{ link.links.all|length }}
-							{% endif %}
-						</td>
-						<td>
-							{% if link.item %}
-								{{ link.item.id }}
-							{% endif %}
-						</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-	{% else %}
-		<p>No notes are available.</p>
 	{% endif %}
 {% endblock %}
