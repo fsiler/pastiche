@@ -1,0 +1,51 @@
+To Do
+=====
+
+edit templates for types of items
+
+===
+
+one list with all types of top-level items
+
+===
+
+sort items resp. to relevance (date, rating, tag/keyword, ...)
+
+===
+
+clusters based on similarity
+
+===
+
+return JSON data
+
+===
+
+dojo data for ajax
+
+===
+
+django-tagging
+
+===
+
+geo-django
+
+===
+
+highlights (cf. viewer) for markup
+
+===
+
+scribbles, hwr?
+
+===
+
+toolbar w/ url field, (collaborative) links, add link, item ticker
+
+===
+
+collaborative computational creativity:
+- provide patterns & rules
+- composer, edtitor
+- publish aggregates, new patterns/rules

@@ -20,7 +20,11 @@ class Item(models.Model):
 			return False
 		else:
 			return True
-
+	
+	def type(self):
+		pass
+		#TODO: determine type and return type of item
+	
 #	class Meta:
 #		abstract = True
 
@@ -62,6 +66,10 @@ class Link(Item):
 			return False
 		else:
 			return True
+
+
+#class File(Item):
+#	pass ???
 
 
 # TODO: requires PIL, http://www.pythonware.com/products/pil/
