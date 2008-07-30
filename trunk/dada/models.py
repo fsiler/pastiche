@@ -19,9 +19,11 @@ class Item(models.Model):
 		return self.title
 	#	return "%s: %s" % (self.type, self.title)
 	
-	def save(self, now = datetime.now(), **kwargs):
+	def save(self, now=None, **kwargs):
 		"""http://blog.michaeltrier.com/2008/1/7/this-week-in-django-5-2008-01-06"""
-		
+
+		if now is None:
+			now = datetime.now()
 		if not self.id:
 			self.created = now
 		self.modified = now
