@@ -85,14 +85,14 @@ l1.title = 'first link'
 l1.user = u1
 l1.private = True
 l1.url = 'http://pastiche.info'
-l1.item = e3
+l1.owner = e3
 l1.save()
 
 n1 = Note()
 n1.title = 'first note'
 n1.user = u1
 n1.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
-n1.item = l1 # add item to note
+n1.owner = l1 # add owner to note
 n1.save()
 
 n2 = Note()
@@ -106,22 +106,22 @@ l2.title = 'second link'
 l2.user = u1
 l2.private = True
 l2.url = 'http://pastiche.info'
-l2.item = t4
+l2.owner = t4
 l2.save()
-l2.notes.add(n2) # add note to item (after save!)
+l2.annotations.add(n2) # add note to owner (after save!)
 
 l3 = Link()
 l3.title = 'third link'
 l3.user = u1
 l3.url = 'http://pastiche.info'
-l3.item = t1
+l3.owner = t1
 l3.save()
 
 l4 = Link()
 l4.title = 'fourth link'
 l4.user = u1
 l4.url = 'http://pastiche.info'
-l4.item = t1
+l4.owner = t1
 l4.save()
 
 l5 = Link()
@@ -134,28 +134,28 @@ n3 = Note()
 n3.title = 'third note'
 n3.user = u1
 n3.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
-n3.item = t1
+n3.owner = t1
 n3.save()
 
 n4 = Note()
 n4.title = 'fourth note'
 n4.user = u1
 n4.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
-n4.item = t3
+n4.owner = t3
 n4.save()
 
 n5 = Note()
 n5.title = 'fifth note'
 n5.user = u1
 n5.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
-n5.item = e2
+n5.owner = e2
 n5.save()
 
 n6 = Note()
 n6.title = 'sixth note'
 n6.user = u1
 n6.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
-n6.item = e4
+n6.owner = e4
 n6.save()
 
 n7 = Note()
@@ -168,7 +168,7 @@ n8 = Note()
 n8.title = 'eighth note'
 n8.user = u1
 n8.text = 'pastiche.info is a playground for experiments in technology, philosophy and arts.'
-n8.item = l5
+n8.owner = l5
 n8.save()
 
 h1 = Item()
@@ -220,11 +220,11 @@ print 'db populated.'
 #n = SimpleNote()
 #n.title = 'first note'
 #n.text = "just some text for this note."
-#n.item = t
+#n.owner = t
 #n.save()
-##t.notes.add(n)
-#n.item
-#n.item.title
+##t.annotations.add(n)
+#n.owner
+#n.owner.title
 #t.notes
 #t.notes.count()
 #t.notes.all()[0].title

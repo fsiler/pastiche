@@ -29,41 +29,43 @@ def merge(left, right):
 	return result
 
 def index(request):
-	top_items_stripped = []
-	top_items = Item.objects.filter(parent=None).order_by('-modified')
-	print "top_items_1", len(top_items), top_items
-	for ti in top_items:
-		try:
-			if ti.note.item:
-				print "xxx note", ti
-			else:
-				top_items_stripped.append(ti)
-		except:
-			pass
-		try:
-			if ti.link.item:
-				print "xxx", ti
-			else:
-				top_items_stripped.append(ti)
-		except:
-			pass
-	print dir(top_items)
-	
-	top_notes = Note.objects.filter(item=None).order_by('-modified')
-	top_links = Link.objects.filter(item=None).order_by('-modified')
-
-	print "top_items_2", len(top_items), top_items
-	print "top_notes", len(top_notes), top_notes
-	print "top_links", len(top_links), top_links
-
-	items = merge(top_notes, top_links)
-	print len(items), items
-
-	items = merge(items, top_items)
-	print len(items), items
+#	top_items_stripped = []
+	top_items = Item.objects.filter(owner=None, parent=None).order_by('-modified')
+	all_items = Item.objects.all()
+	# ??? filter(owner__isnull=True)
+	#print "top_items_1", len(top_items), top_items
+	#for ti in top_items:
+	#	try:
+	#		if ti.note.item:
+	#			print "xxx note", ti
+	#		else:
+	#			top_items_stripped.append(ti)
+	#	except:
+	#		pass
+	#	try:
+	#		if ti.link.item:
+	#			print "xxx", ti
+	#		else:
+	#			top_items_stripped.append(ti)
+	#	except:
+	#		pass
+	#print dir(top_items)
+	#
+	#top_notes = Note.objects.filter(owner=None).order_by('-modified')
+	#top_links = Link.objects.filter(owner=None).order_by('-modified')
+	#
+	#print "top_items_2", len(top_items), top_items
+	#print "top_notes", len(top_notes), top_notes
+	#print "top_links", len(top_links), top_links
+	#
+	#items = merge(top_notes, top_links)
+	#print len(items), items
+	#
+	#items = merge(items, top_items)
+	#print len(items), items
 
 	# simple
-	return render_to_response('dada/index.html', {'items': items}, context_instance=RequestContext(request))
+	return render_to_response('dada/index.html', {'items': top_items, 'all_items': all_items}, context_instance=RequestContext(request))
 
 	## complicated
 	#t = loader.get_template('dada/index.html')

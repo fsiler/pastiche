@@ -106,6 +106,11 @@
 					</a>
 
 						
+					{% for annotation in item.annotations.all %}
+						<a href="/note/{{ annotation.id }}">
+							<img src="/static/icons/note.png" alt="{{ annotation.title }}" title="{{ annotation.title }}" />
+						</a>
+					{% endfor %}
 					{% for note in item.notes.all %}
 						<a href="/note/{{ note.id }}">
 							<img src="/static/icons/note.png" alt="{{ note.title }}" title="{{ note.title }}" />
@@ -137,7 +142,7 @@
 	{% endif %}
 
 	<h1>Items</h1>
-	{% if items %}
+	{% if all_items %}
 		<table border=1 cellspacing=0 cellpadding=3>
 			<thead style="font-weight: bold">
 				<td>id</td>
@@ -151,7 +156,7 @@
 				<td></td>
 			</thead style="font-weight: bold">
 			<tbody>
-				{% for item in items %}
+				{% for item in all_items %}
 					<tr>
 						<td>{{ item.id }}
 							{% if item.node %}
