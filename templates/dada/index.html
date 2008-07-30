@@ -150,9 +150,9 @@
 				<td>rating</td>
 				<td>private</td>
 				<td>user</td>
-				<td>date</td>
-				<td>notes</td>
-				<td>links</td>
+				<td>created</td>
+				<td>modified</td>
+				<td>annotations</td>
 				<td></td>
 			</thead style="font-weight: bold">
 			<tbody>
@@ -191,28 +191,12 @@
 							{% endcomment %}{% endif %}
 						</td>
 						<td>{{ item.user }}</td>
-						<td>{{ item.date }}</td>
+						<td>{{ item.created }}</td>
+						<td>{{ item.modified }}</td>
 						<td>
-							{% if item.notes %}
-								{{ item.notes.all|length }}
+							{% if item.annotations %}
+								{{ item.annotations.all|length }}
 							{% endif %}
-						</td>
-						<td>
-							{% if item.links %}
-								{{ item.links.all|length }}
-							{% endif %}
-						</td>
-						<td>
-							{% for note in item.notes.all %}
-								<a href="/note/{{ note.id }}">
-									<img src="/static/icons/note.png" alt="{{ note.title }}" title="{{ note.title }}" border="0" style="vertical-align: middle" />
-								</a>
-							{% endfor %}
-							{% for link in item.links.all %}
-								<a href="/link/{{ link.id }}">
-									<img src="/static/icons/link.png" alt="{{ link.title }}" title="{{ link.title }}" border="0" style="vertical-align: middle" />
-								</a>
-							{% endfor %}
 						</td>
 					</tr>
 				{% endfor %}

@@ -85,7 +85,6 @@ l1.title = 'first link'
 l1.user = u1
 l1.private = True
 l1.url = 'http://pastiche.info'
-l1.owner = e3
 l1.save()
 
 n1 = Note()
@@ -106,7 +105,6 @@ l2.title = 'second link'
 l2.user = u1
 l2.private = True
 l2.url = 'http://pastiche.info'
-l2.owner = t4
 l2.save()
 l2.annotations.add(n2) # add note to owner (after save!)
 
