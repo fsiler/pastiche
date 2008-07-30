@@ -25,7 +25,7 @@
 	{% if items %}
 	<h1>recent items</h1>
 		
-		{% recurse item.children.all with top_items as item %}
+		{% recurse item.children.all with items as item %}
 		<ul>
 			{% loop %}
 			<li style="background-color: {% cycle '#eeeeee' '#dddddd' '#cccccc' '#dddddd' %}; list-style-type: none">
