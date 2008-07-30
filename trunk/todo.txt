@@ -6,6 +6,8 @@ edit templates for types of items
 ===
 
 one list with all types of top-level items
+ordere by last modification, highest relevance
+lifestream
 
 ===
 

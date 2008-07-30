@@ -6,17 +6,64 @@ from django.shortcuts import render_to_response, get_object_or_404
 from pastiche.dada.models import Item, Note, Link, Task, Event
 
 
+# http://www.djangoproject.com/documentation/serialization/
+#from django.core import serializers
+#data = serializers.serialize("xml", SomeModel.objects.all())
+
+
+def merge(left, right):
+	"""http://en.literateprograms.org/Merge_sort_(Python)"""
+	
+	result = []
+	i ,j = 0, 0
+	while (i < len(left)) and (j < len(right)):
+#		print left[i].modified, right[j].modified
+		if (left[i].modified <= right[j].modified):
+			result.append(left[i])
+			i = i + 1
+		else:
+			result.append(right[j])
+			j = j + 1
+	result += left[i:]
+	result += right[j:]
+	return result
+
 def index(request):
-	top_items = Item.objects.filter(parent=None)
-#	top_items = Item.objects.filter(dependent=False)
-	items = Item.objects.all()
-	tasks = Task.objects.all()
-	events = Event.objects.all()
-	notes = Note.objects.all()#filter(item=None)
-	links = Link.objects.all()#filter(item=None)
+	top_items_stripped = []
+	top_items = Item.objects.filter(parent=None).order_by('-modified')
+	print "top_items_1", len(top_items), top_items
+	for ti in top_items:
+		try:
+			if ti.note.item:
+				print "xxx note", ti
+			else:
+				top_items_stripped.append(ti)
+		except:
+			pass
+		try:
+			if ti.link.item:
+				print "xxx", ti
+			else:
+				top_items_stripped.append(ti)
+		except:
+			pass
+	print dir(top_items)
+	
+	top_notes = Note.objects.filter(item=None).order_by('-modified')
+	top_links = Link.objects.filter(item=None).order_by('-modified')
+
+	print "top_items_2", len(top_items), top_items
+	print "top_notes", len(top_notes), top_notes
+	print "top_links", len(top_links), top_links
+
+	items = merge(top_notes, top_links)
+	print len(items), items
+
+	items = merge(items, top_items)
+	print len(items), items
 
 	# simple
-	return render_to_response('dada/index.html', {'top_items': top_items, 'items': items, 'tasks': tasks, 'events': events, 'notes': notes, 'links': links}, context_instance=RequestContext(request))
+	return render_to_response('dada/index.html', {'items': items}, context_instance=RequestContext(request))
 
 	## complicated
 	#t = loader.get_template('dada/index.html')

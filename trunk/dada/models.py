@@ -4,22 +4,28 @@ from django.contrib.auth.models import User
 
 
 class Item(models.Model):
-	created = models.DateTimeField(auto_now_add=True)
-	modified = models.DateTimeField(auto_now=True)
+	created = models.DateTimeField()#default=datetime.now)
+	modified = models.DateTimeField()#default=datetime.now)
 	user = models.ForeignKey(User, related_name='items')
 	title = models.CharField(max_length=512)
 	rating = models.IntegerField(default = 0, null=True, blank=True)	# -2 <= rating <= 2
 	private = models.BooleanField(default=False) # TODO: share in groups?
-	parent = models.ForeignKey('self', related_name='children', null=True, blank=True)
+	item = models.ForeignKey('self', related_name='annotations', null=True, blank=True)
+	related = models.ManyToManyField('self', null=True, blank=True)
+#	tags = TagField()
 	
 	def __unicode__(self):
 		return self.title
 	
-	def dependent(self):
-		if self.parent is None:
-			return False
-		else:
-			return True
+	def save(self, **kwargs):
+		"""http://blog.michaeltrier.com/2008/1/7/this-week-in-django-5-2008-01-06"""
+		now = datetime.now()
+		self.modified = now
+		if not self.id:
+			self.created = now
+		if self.parent:
+			self.parent.save(**kwargs)
+		super(Item, self).save(**kwargs)
 	
 	def type(self):
 		pass
@@ -29,47 +35,111 @@ class Item(models.Model):
 #		abstract = True
 
 
-#class Node(Item):
-##	parents = models.ManyToManyField('self', related_name='children')
-#	parent = models.ForeignKey('self', related_name='children', null=True, blank=True)
-#
-##	class Meta:
-##		abstract = True
+class Node(Item):
+#	parents = models.ManyToManyField('self', related_name='children')
+	parent = models.ForeignKey(Item, related_name='children', null=True, blank=True)
+
+#	class Meta:
+#		abstract = True
+
+
+class Task(Node):
+	done = models.BooleanField(default=False)
+	due = models.DateTimeField(null=True, blank=True)
+#	repeat = ?
+
+
+class Event(Node):
+	start = models.DateTimeField(verbose_name='from')
+	stop = models.DateTimeField(verbose_name='until')
 
 
 class Note(Item):
 	text = models.TextField(null=True, blank=True) #TODO: Rich Text
-	item = models.ForeignKey(Item, related_name='notes', null=True, blank=True)
+#	item = models.ForeignKey(Item, related_name='notes', null=True, blank=True)
 	
 	## TODO: __unicode__ seems not to work on TextField
 	#def __str__(self):
 	#	return self.text
 
-	def dependent(self):
-		if (self.parent is None) and (self.item is None):
-			return False
-		else:
-			return True
+	#def dependent(self):
+	#	if (self.parent is None) and (self.item is None):
+	#		return False
+	#	else:
+	#		return True
 
 
 class Link(Item):
 	url = models.URLField()
-	item = models.ForeignKey(Item, related_name='links', null=True, blank=True)
+#	item = models.ForeignKey(Item, related_name='links', null=True, blank=True)
 	#TODO: content = models.TextField(null=True, blank=True)
 	#TODO: thumbnail = models.ImageField(null=True, blank=True)
 	
 	#def __unicode__(self):
 	#	return self.url
 
-	def dependent(self):
-		if (self.parent is None) and (self.item is None):
-			return False
-		else:
-			return True
+	#def dependent(self):
+	#	if (self.parent is None) and (self.item is None):
+	#		return False
+	#	else:
+	#		return True
 
 
 #class File(Item):
-#	pass ???
+#	pass
+
+
+#class Newsfeed(Item):
+#	rss
+
+
+#class Image(Item):
+#	pass
+
+
+#class Scribble(Item):
+#	pass
+
+
+#class Track(Item): # music
+#	pass
+#	lyrics
+
+
+#class Artist(Item):
+#	pass
+
+
+#class WorkOfArt(Item): # Painting, Sculpture
+#	pass
+
+
+#class Composer(Item):
+#	pass
+
+
+#class Building(Item):
+#	pass
+
+
+#class Architect(Item):
+#	pass
+
+
+#class Book(Item):
+#	pass
+
+
+#class Author(Item):
+#	pass
+
+
+#class Image(Item):
+#	pass
+
+
+#class Scribble(Item):
+#	pass
 
 
 # TODO: requires PIL, http://www.pythonware.com/products/pil/
@@ -115,21 +185,6 @@ class Tag(models.Model):
 # {% endif %}
 ##
 
-
-class Task(Item):
-	done = models.BooleanField(default=False)
-	due = models.DateTimeField(null=True, blank=True)
-#	repeat = ?
-
-
-class Event(Item):
-	start = models.DateTimeField(verbose_name='from')
-	stop = models.DateTimeField(verbose_name='until')
-
-
-
-
-#
 #	_tags = ManyToMany('Tag', inverse='items')
 #
 #	def _get_tags(self):
