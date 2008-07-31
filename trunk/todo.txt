@@ -6,7 +6,7 @@ edit templates for types of items
 ===
 
 one list with all types of top-level items
-ordere by last modification, highest relevance
+ordered by last modification, highest relevance
 lifestream
 
 ===
@@ -40,6 +40,9 @@ highlights (cf. viewer) for markup
 ===
 
 scribbles, hwr?
+music tracks, artists, composers
+books, authors
+buildings, architects
 
 ===
 
