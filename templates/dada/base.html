@@ -1,38 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<link rel="shortcut icon" href="/static/images/favicon.ico"/>
-	<link media="print" type="text/css" href="/static/styles/cssPrint.css" rel="stylesheet"/>
-	<style media="screen" type="text/css">
-		@import url(/static/styles/cssBasis.css);
-		@import url(/static/styles/cssHome.css);
-		@import url(/static/styles/cssRedef.css);
-		img {border: 0,0,0,0; vertical-align: middle};
-	</style>
-	<title>{% block title %} title {% endblock %}</title>
-</head>
-
-<body>
-	<div style="background: #414950">
-		<img src="/static/images/pastiche_128.png" alt="pastiche" align="middle"/>
-		<font style="font-size: x-large; color: #ffffff; font-weight: bold; text-align=center">{% block heading %} heading {% endblock %}</font>
-	</div>
-	<div align="right">
-		<a href="/admin">admin</a>
-	</div>
-
-<!--
-	<div id="sidebar">
-		{% block sidebar %}
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/blog/">Blog</a></li>
-		</ul>
-		{% endblock %}
-	</div>
--->
-	<div id="content">
-		{% block content %}{% endblock %}
-	</div>
-</body>
+	<head>
+		<link rel="shortcut icon" href="/static/images/favicon.ico"/>
+		<link media="print" type="text/css" href="/static/styles/cssPrint.css" rel="stylesheet"/>
+		<style media="screen" type="text/css">
+			@import url(/static/styles/cssBasis.css);
+			@import url(/static/styles/cssHome.css);
+			@import url(/static/styles/cssRedef.css);
+			img {border: 0,0,0,0; vertical-align: middle};
+		</style>
+		<title>{% block title %} title {% endblock %}</title>
+	</head>
+	<body>
+		<div style="background: #414950">
+			<img src="/static/images/pastiche_128.png" alt="pastiche" align="middle"/>
+			<font style="font-size: x-large; color: #ffffff; font-weight: bold; text-align=center">{% block heading %} heading {% endblock %}</font>
+		</div>
+		<div align="right">
+			<a href="/admin">admin</a>
+		</div>
+		
+		<!--
+		<div id="sidebar">
+			{% block sidebar %}
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog/">Blog</a></li>
+			</ul>
+			{% endblock %}
+		</div>
+		-->
+		
+		<div id="content">
+			{% block content %}{% endblock %}
+		</div>
+	</body>
 </html>
