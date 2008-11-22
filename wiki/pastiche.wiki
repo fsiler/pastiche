@@ -69,6 +69,7 @@ Some applications of *pastiche* will be demonstrated at [http://pastiche.info pa
  * viewpoint engineering
  * self-configuring, self-repairing, autonomic
  * bricoleur, diy, MAKE, oss
+ * [http://en.wikipedia.org/wiki/Deixis deixis]
 
 = sources of inspiration =
 
